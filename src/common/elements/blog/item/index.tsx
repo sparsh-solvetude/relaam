@@ -11,7 +11,7 @@ const types: any = {
 export const Item = ({ title, slug, image, date, time, type }: any) => {
   return (
     <Link href={`/${types[type]}/${slug}`}>
-      <div className="bg-white rounded-xl flex flex-col gap-1 relative h-full shadow-lg border border border-[#9f3323] hover:border-2 hover:border-[#9f3323] transition-all duration-300 cursor-pointer">
+      <div className="bg-white rounded-xl flex flex-col gap-1 relative h-full shadow-lg border border-[#9f3323] hover:border-2 hover:border-[#9f3323] transition-all duration-300 cursor-pointer">
         <div className="absolute right-3 top-3 bg-white px-3 py-1.5 rounded-lg flex items-center gap-1 text-xs shadow-sm">
           <img src="/icons/clock.svg" alt="heart" className="h-4" />
           {time}
