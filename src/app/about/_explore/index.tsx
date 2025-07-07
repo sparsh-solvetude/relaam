@@ -42,10 +42,10 @@ const setTwo = [
 export const Explore = ({}: any) => {
   return (
     <div className="w-full py-16 px-0 md:px-16  bg-[#cbbda5]">
-      <div className="text-md text-theme-dark-green bg-white uppercase w-32 font-playfair font-bold py-2 hidden md:flex items-center justify-center mb-12 rounded-full ">
+      <div className="text-md text-theme-dark-green text-white bg-[#9f3323] uppercase w-32 font-playfair  py-2 hidden md:flex items-center justify-center mb-12 rounded-full ">
         Services
       </div>
-      <div className="text-md text-theme-dark-green bg-white uppercase w-32 font-playfair font-bold py-2 md:hidden flex items-center justify-center mb-6 rounded-full mx-auto">
+      <div className="text-md text-theme-dark-green bg-[#9f3323]  uppercase w-32 font-playfair font-bold py-2 md:hidden flex items-center justify-center mb-6 rounded-full mx-auto">
         Services
       </div>
 
@@ -53,7 +53,7 @@ export const Explore = ({}: any) => {
         <div className="w-full md:w-6/12">
           <div className="w-full px-6 md:px-0 flex items-center justify-end">
             <div className="w-full">
-              <h2 className="text-2xl md:text-3xl text-theme-dark-green uppercase font-extralight leading-normal text-center md:text-start">
+              <h2 className="text-2xl md:text-3xl text-theme-dark-green  leading-normal text-center md:text-start">
                 Complete support 
                 <br /> in Real Estate
               </h2>
@@ -74,7 +74,7 @@ export const Explore = ({}: any) => {
                 className="w-full h-[370px] object-cover"
               />
               <div className="mt-6 md:mt-12">
-                <h3 className="text-2xl md:text-3xl text-theme-dark-green leading-tight md:leading-normal font-playfair font-semibold">
+                <h3 className="text-2xl md:text-3xl text-theme-dark-green leading-tight md:leading-normal font-playfair">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-md font-light">{item.description}</p>
@@ -96,7 +96,7 @@ export const Explore = ({}: any) => {
                 className="w-full h-[370px] object-cover"
               />
               <div className="mt-6 md:mt-12">
-                <h3 className="text-2xl md:text-3xl text-theme-dark-green leading-tight md:leading-normal font-playfair font-semibold">
+                <h3 className="text-2xl md:text-3xl text-theme-dark-green leading-tight md:leading-normal font-playfair">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-md font-light">{item.description}</p>

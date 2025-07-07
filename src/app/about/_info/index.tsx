@@ -7,7 +7,7 @@ export const Info = ({}: any) => {
   return (
     <div className="w-full py-8">
       <div className="max-w-4xl mx-auto px-6 py-8">
-        <h2 className="text-2xl md:text-3xl text-center font-light text-theme-dark-green uppercase">
+        <h2 className="text-2xl md:text-3xl text-center font-light text-theme-dark-green">
           Unmatched Opulence, Unparalleled Living
         </h2>
         <div className="w-full h-64 md:h-96 mt-8 relative">

@@ -29,6 +29,8 @@ export const Item = ({ image, slug, name, location, price, icon }: any) => {
             <p className="text-xs opacity-80">2 Beds</p>
           </div>
 
+          <p className="text-xs opacity-80 ml-5">Property type - Flat</p>
+
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center mt-2 gap-2">
               <button className="bg-white border border-[#1E1E1E] hover:bg-gray p-1.5 h-10 md:h-8 rounded-full">
