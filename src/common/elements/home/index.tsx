@@ -14,7 +14,7 @@ import { Link, Element,scroller  } from 'react-scroll';
 
 export default function HomeClient({ data }: { data: any }) {
 
-const sectionRefs = useRef({});
+const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
   useEffect(() => {
     const observerOptions = {
@@ -22,15 +22,17 @@ const sectionRefs = useRef({});
       threshold: 0.3, // triggers when 30% of the section is visible
     };
 
-    const observerCallback = (entries) => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const sectionName = entry.target.getAttribute('name');
-          scroller.scrollTo(sectionName, {
-            smooth: true,
-            duration: 300,
-            offset: 0,
-          });
+          const sectionName = entry.target.getAttribute('data-name');
+          if (sectionName) {
+            scroller.scrollTo(sectionName, {
+              smooth: true,
+              duration: 300,
+              offset: 0,
+            });
+          }
         }
       });
     };
@@ -46,7 +48,7 @@ const sectionRefs = useRef({});
     };
   }, []);
 
-  const setRef = (name) => (el) => {
+  const setRef = (name: string) => (el: HTMLElement | null) => {
     if (el) {
       sectionRefs.current[name] = el;
     }
@@ -58,7 +60,7 @@ const sectionRefs = useRef({});
       <Showcase />
         <Element name="section1">
             <section
-            name="section1"
+            data-name="section1"
             ref={setRef('section1')}
             className='h-screen'
         >
