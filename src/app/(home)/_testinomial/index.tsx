@@ -7,7 +7,7 @@ export const Testinomial = () => {
       <div className="max-w-screen-2xl mx-auto px-6 sm:px-12 py-20 text-black">
         <div className="text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Our Client <span className="text-[#9f3517]">Testimonial</span>
+            Our Client <span className="text-[#9f3323]">Testimonial</span>
           </h2>
           <p className="font-light w-full md:w-2/3 mx-auto opacity-80">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet

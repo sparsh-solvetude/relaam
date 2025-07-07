@@ -63,7 +63,7 @@ export const Search = () => {
                 </select>
               </div>
               {/* Search btn */}
-              <button className="bg-[#9f3517] text-white px-4 py-4 w-auto md:w-1/4 h-full rounded-full font-playfair uppercase">
+              <button className="bg-[#9f3323] text-white px-4 py-4 w-auto md:w-1/4 h-full rounded-full font-playfair uppercase">
                 Search
               </button>
             </div>
@@ -86,11 +86,11 @@ export const Search = () => {
             </p>
             <div className="flex items-center justify-between gap-3 mt-4 rounded-full w-full flex-col md:flex-row">
               {/* Tenant Portal */}
-              <button className="bg-[#9f3517] text-white px-3 py-3 w-full md:w-1/2 h-full rounded-lg font-bold uppercase">
+              <button className="bg-[#9f3323] text-white px-3 py-3 w-full md:w-1/2 h-full rounded-lg font-bold uppercase">
                 Tenant Portal
               </button>
               {/* Landlord Portal */}
-              <button className="bg-white border border-[#9f3517] text-[#9f3517] px-3 py-3 w-full md:w-1/2 h-full rounded-lg font-bold uppercase">
+              <button className="bg-white border border-[#9f3323] text-[#9f3323] px-3 py-3 w-full md:w-1/2 h-full rounded-lg font-bold uppercase">
                 Landlord Portal
               </button>
             </div>

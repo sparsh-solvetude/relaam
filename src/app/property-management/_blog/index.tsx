@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 export const Blog = ({}: any) => {
   return (
     <div className="w-full my-0 md:my-16 ">
-      <div className="max-w-screen-2xl mx-auto px-0 md:mx-16 flex items-center justify-between bg-[#9f351742] rounded-xl overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto px-0 md:mx-16 flex items-center justify-between bg-[#c2d6ef] rounded-xl overflow-hidden">
         <div className="w-1/2 pr-4 hidden md:block">
           <img
             src="/images/explore/explore-2.jpg"
@@ -18,7 +18,7 @@ export const Blog = ({}: any) => {
           <div className="bg-[#9f3417] px-4 py-3 font-bold text-white text-sm font-playfair uppercase rounded-full w-auto inline-block">
             Leasing Guides
           </div>
-          <h2 className="text-2xl md:text-4xl uppercase text-black leading-tight w-full mt-5">
+          <h2 className="text-2xl md:text-4xl  text-black leading-tight w-full mt-5">
             Leasing Services
           </h2>
           <img

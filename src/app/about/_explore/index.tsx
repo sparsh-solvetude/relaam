@@ -41,7 +41,7 @@ const setTwo = [
 
 export const Explore = ({}: any) => {
   return (
-    <div className="w-full py-16 px-0 md:px-16  bg-[#F5F5DC]">
+    <div className="w-full py-16 px-0 md:px-16  bg-[#cbbda5]">
       <div className="text-md text-theme-dark-green bg-white uppercase w-32 font-playfair font-bold py-2 hidden md:flex items-center justify-center mb-12 rounded-full ">
         Services
       </div>
@@ -54,7 +54,7 @@ export const Explore = ({}: any) => {
           <div className="w-full px-6 md:px-0 flex items-center justify-end">
             <div className="w-full">
               <h2 className="text-2xl md:text-3xl text-theme-dark-green uppercase font-extralight leading-normal text-center md:text-start">
-                Complete support
+                Complete support 
                 <br /> in Real Estate
               </h2>
               <p className="mt-4 md:mt-8 text-sm md:text-lg font-light text-center md:text-start">

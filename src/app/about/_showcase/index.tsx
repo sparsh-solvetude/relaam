@@ -2,17 +2,21 @@
 
 import React, { useEffect, useState } from "react";
 
-export const Showcase = ({ slides, title, description }: any) => {
+export const Showcase = ({ slides = [], title, description }: any) => {
   const [currentSlide, currentSlideSet] = useState(0);
   const [show, showSet] = useState(false);
 
   // change slide every 5 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      currentSlideSet((currentSlide + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentSlide]);
+  if (!slides || slides.length === 0) return;
+
+  const interval = setInterval(() => {
+    currentSlideSet((currentSlide + 1) % slides.length);
+  }, 5000);
+
+  return () => clearInterval(interval);
+}, [currentSlide, slides]);
+
 
   return (
     <div className="h-[400px] md:h-screen w-full">

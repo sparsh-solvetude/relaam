@@ -43,7 +43,7 @@ export const Expert = () => {
             </div>
           </div> */}
         </div>
-        <div className="px-0 md:px-4 text-black flex flex-col justify-center items-start">
+        <div className="px-0 md:px-4 text-[#0f1821] flex flex-col justify-center items-start">
           <h2 className="text-5xl font-bold mb-6 leading-base">
             AD One
           </h2>
@@ -54,7 +54,7 @@ export const Expert = () => {
             vulputate fringilla tellus.
           </p>
           <button
-            className="bg-[#9f3517] text-white px-8 py-2 mt-10 rounded-lg font-bold text-lg"
+            className="bg-[#9f3323] text-white px-8 py-2 mt-10 rounded-full  text-lg"
             onClick={() => showSet(true)}
           >
             View Details
@@ -63,7 +63,7 @@ export const Expert = () => {
       </div>
 
       <div className="max-w-screen-2xl mx-auto px-6 sm:px-12 pt-10 pb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="px-0 md:px-4 text-black flex flex-col justify-center items-start">
+        <div className="px-0 md:px-4 text-[#0f1821] flex flex-col justify-center items-start">
           <h2 className="text-5xl font-bold mb-6 leading-base">
             Vera Building
           </h2>
@@ -74,7 +74,7 @@ export const Expert = () => {
             vulputate fringilla tellus.
           </p>
           <button
-            className="bg-[#9f3517] text-white px-8 py-2 mt-10 rounded-lg font-bold text-lg"
+            className="bg-[#9f3323] text-white px-8 py-2 mt-10 rounded-full  text-lg"
             onClick={() => showSet(true)}
           >
             View Details

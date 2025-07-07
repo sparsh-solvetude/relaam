@@ -7,12 +7,13 @@ export const Showcase = ({ slides, title, description }: any) => {
   const [show, showSet] = useState(false);
 
   // change slide every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      currentSlideSet((currentSlide + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentSlide]);
+ useEffect(() => {
+  const interval = setInterval(() => {
+    currentSlideSet((prev) => (prev + 1) % slides?.length);
+  }, 5000);
+  return () => clearInterval(interval);
+}, []); // no need for slides.length or currentSlide
+
 
   return (
     <div className="h-[500px] md:h-screen w-full">
@@ -27,10 +28,10 @@ export const Showcase = ({ slides, title, description }: any) => {
           {/* <p className="text-xl w-full lg:w-1/2 leading-tight uppercase mb-3">
             Explore
           </p> */}
-          <h1 className="text-3xl md:text-6xl font-bold text-black md:leading-base w-full lg:w-1/2 uppercase font-playfair">
+          <h1 className="text-3xl md:text-6xl font-bold text-white md:leading-base w-full lg:w-1/2  font-playfair">
             Property Management
           </h1>
-          <p className="text-lg w-full lg:w-1/2 leading-tight mt-5 hidden md:block">
+          <p className="text-lg text-white w-full lg:w-1/2 leading-tight mt-5 hidden md:block">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             incididunt ut labore etLorem ipsum dolor sit amet, consectetur
             adipiscing elit.

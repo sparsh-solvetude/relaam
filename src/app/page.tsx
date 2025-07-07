@@ -1,3 +1,5 @@
+'use client';
+
 import { Showcase } from "./(home)/_showcase";
 import { Expertise } from "./(home)/_expertise";
 import { Expert } from "./(home)/_expert";
@@ -15,6 +17,56 @@ import LuxuryNavbar from "./(home)/_navbar";
 import { Search } from "./(home)/_search";
 import { FeaturedProperty } from "./(home)/featuredProperty";
 import { Testinomial } from "./(home)/_testinomial";
+
+import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
+
+type Direction = 'left' | 'right';
+
+interface AnimatedSectionProps {
+  children: ReactNode;
+  delay?: number;
+  direction?: Direction;
+}
+
+function AnimatedSection({
+  children,
+  delay = 0,
+  direction = 'left',
+}: AnimatedSectionProps) {
+  const getDirectionOffset = () => {
+    switch (direction) {
+      case 'left':
+        return { x: -60, y: 0 };
+      case 'right':
+        return { x: 60, y: 0 };
+      default:
+        return { x: 0, y: 0 };
+    }
+  };
+
+  const initial = {
+    opacity: 0,
+    ...getDirectionOffset(),
+  };
+
+  const animate = {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { duration: 0.6, delay },
+  };
+
+  return (
+    <motion.div
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: false, amount: 0.5 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export const fetchCache = "force-no-store";
 
@@ -39,14 +91,14 @@ const fetchData = async () => {
 export default async function Home() {
   const data = await fetchData();
 
-  console.log("data.pageContent", data.pageContent);
-
   return (
-    <div>
-      {/* <RealEstateHero /> */}
-      {/* <LuxuryNavbar /> */}
-      <Showcase />
-      <Search />
+    <div className="overflow-hidden">
+      <AnimatedSection direction="right" delay={0.5}>
+        <Showcase />
+      </AnimatedSection>
+      <AnimatedSection direction="left" delay={0.5}>
+        <Search />
+      </AnimatedSection>
       <FeaturedProperty />
       <Services />
       <Expert />

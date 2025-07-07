@@ -29,21 +29,21 @@ export const FeaturedProperty = () => {
                 slug="property-1"
                 name="Luxury Villa in Dubai"
                 location="Dubai, UAE"
-                price="AED 5,000,000"
+                price="AED 50,000"
             />
             <Item
                 image="/images/atlantis.jpg"
                 slug="property-2"
                 name="Modern Apartment in Marina"
                 location="Dubai Marina, UAE"
-                price="AED 3,500,000"
+                price="AED 35,000"
             />
             <Item 
                 image="/images/burj-al-arab.jpg"
                 slug="property-3"
                 name="Elegant Villa in Abu Dhabi"
                 location="Abu Dhabi, UAE"
-                price="AED 4,200,000"
+                price="AED 42,000"
             />
           </div>
         </div>

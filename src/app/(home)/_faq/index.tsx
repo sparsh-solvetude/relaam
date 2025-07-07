@@ -17,9 +17,9 @@ export const FAQ = () => {
             placerat quis, laoreet non odio. Quisque hendrerit id ex gravida
             vestibulum. Curabitur non mi tortor.
           </p>
-          <div className="w-20 h-1 bg-[#9f3517] mt-4 transition-all duration-300 group-hover:w-20"></div>
+          <div className="w-20 h-1 bg-[#9f3323] mt-4 transition-all duration-300 group-hover:w-20"></div>
         </div>
-        <div className="bg-white rounded-xl flex flex-col px-4 md:px-6 py-2 shadow-lg border border-[#9f351773]">
+        <div className="bg-white rounded-xl flex flex-col px-4 md:px-6 py-2 shadow-lg border border-[#9f3323]">
           <Item />
           <Item />
           <Item />

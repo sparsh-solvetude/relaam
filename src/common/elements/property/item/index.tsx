@@ -16,8 +16,7 @@ export const Item = ({ image, slug, name, location, price }: any) => {
         <div className="absolute left-4 bottom-4 right-4 z-10 bg-white p-4 rounded-xl flex flex-col items-start gap-0">
           <h3 className="text-xl font-bold ">{name}</h3>
           <div className="flex items-end gap-1">
-            <h4 className="text-2xl font-black text-[#9f3517]">{price}</h4>
-            <p className="text-sm opacity-80 font-extralight">per month</p>
+            <h4 className="text-2xl font-black text-[#9f3323]">{price}</h4>
           </div>
 
           <div className="flex gap-1 mt-2 items-center">

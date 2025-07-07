@@ -25,13 +25,14 @@ export const Showcase = () => {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
-  // change slide every 5 seconds
+ 
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      currentSlideSet((currentSlide + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentSlide]);
+  const interval = setInterval(() => {
+    currentSlideSet(prev => (prev + 1) % slides.length);
+  }, 5000);
+  return () => clearInterval(interval);
+}, [slides.length]);
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
   const minSwipeDistance = 30;
@@ -75,7 +76,7 @@ export const Showcase = () => {
         loop
         muted
         playsInline
-        className="h-svh w-full object-cover"
+        className="h-svh w-full object-cover "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: easeInOut }}
@@ -89,7 +90,7 @@ export const Showcase = () => {
       <div className="absolute top-0 left-0 w-full h-svh">
         <div className="max-w-screen-2xl mx-auto px-6 sm:px-12 flex flex-col items-start justify-center h-svh pt-20 text-white">
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl font-bold text-white md:leading-base"
+            className="text-5xl sm:text-6xl md:text-7xl font-bold text-white md:leading-base "
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1, duration: 0.5, ease: easeInOut }}
@@ -109,7 +110,7 @@ export const Showcase = () => {
             investing today!
           </motion.p>
           <motion.button
-            className="bg-[#9f3517] text-white px-8 py-2 mt-8 rounded-lg font-bold text-lg"
+            className="bg-[#9f3323] text-white px-8 py-2 mt-8 rounded-full  text-lg"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.5, ease: easeInOut }}

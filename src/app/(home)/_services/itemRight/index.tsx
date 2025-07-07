@@ -9,7 +9,7 @@ export const ItemRight = ({ image, title }: any) => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet
         elit et nisi tincidunt maximus. Duis at facilisis massa tincidunt maximus.
         </p>
-        <button className="border-2 border-[#9f3517] text-[#9f3517] px-6 py-2 rounded-md flex items-center gap-2 font-bold hover:bg-white hover:border-white transition-all duration-500 mt-2">
+        <button className="border-2 border-[#9f3323] text-[#9f3323] px-6 py-2 rounded-md flex items-center gap-2 font-bold hover:bg-white hover:border-white transition-all duration-500 mt-2">
           <img src="/icons/whatsapp.svg" alt="chat" className="h-6" />
           Chat
         </button>

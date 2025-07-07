@@ -5,13 +5,13 @@ import React, { useEffect, useState } from "react";
 
 export const Guide = ({}: any) => {
   return (
-    <div className="w-full my-0 md:my-16 ">
-      <div className="max-w-screen-2xl mx-auto px-0 md:mx-16 flex items-center justify-between bg-[#9f351742] rounded-xl overflow-hidden">
+    <div className="w-full my-0 md:my-16 bg- ">
+      <div className="max-w-screen-2xl mx-auto px-0 md:mx-16 flex items-center justify-between bg-[#c2d6ef] rounded-xl overflow-hidden">
         <div className="w-full md:w-1/2 flex flex-col items-start justify-center py-16 px-8 md:px-12">
           <div className="bg-[#9f3417] px-4 py-3 font-bold text-white text-sm font-playfair uppercase rounded-full w-auto inline-block">
             Landlord Guides
           </div>
-          <h2 className="text-2xl md:text-4xl uppercase text-theme-dark-green leading-tight w-full mt-5">
+          <h2 className="text-2xl md:text-4xl  text-theme-dark-green leading-tight w-full mt-5">
             Landlord Services
           </h2>
           <img

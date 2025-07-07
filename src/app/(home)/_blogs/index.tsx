@@ -42,7 +42,7 @@ export const Blogs = () => {
       </div>
       <div className="max-w-screen-xl mx-auto px-4 text-center">
         <Link href="/news">
-          <button className="bg-[#9f3517] text-white px-6 py-2 mt-8 rounded-lg font-bold text-lg flex items-center gap-2 justify-center mx-auto">
+          <button className="bg-[#9f3323] text-white px-6 py-2 mt-8 rounded-full text-lg flex items-center gap-2 justify-center mx-auto">
             View More
             <img src="/icons/arrow.svg" alt="arrow" className="h-6 rotate-45" />
           </button>
