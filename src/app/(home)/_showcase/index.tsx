@@ -155,8 +155,10 @@ import {
 } from "framer-motion";
 
 const slides = [
-  "/videos/showcase/1.mp4",
-  "/videos/showcase/2.mp4",
+  "https://media.adcb.com/ADCP/adcp-generic-spotlight-english-240121.mp4",
+  "https://media.adcb.com/ADCP/adcp-video-070120.mp4",
+  // "/videos/showcase/1.mp4",
+  // "/videos/showcase/2.mp4",
   "/videos/showcase/4.mp4",
   "/videos/showcase/5.mp4",
 ];
