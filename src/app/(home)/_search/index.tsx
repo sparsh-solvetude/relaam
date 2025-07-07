@@ -6,7 +6,7 @@ import RebrandBanner from '@/common/RebrandBanner';
 
 const transition = {
   duration: 0.8,
-  ease: [0.25, 0.1, 0.25, 1], // smoother and slower ease
+  ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number], // smoother and slower ease
 };
 
 export const Search = () => {
