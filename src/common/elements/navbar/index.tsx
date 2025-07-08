@@ -43,15 +43,9 @@ export const Navbar = ({ properties = [], areas = [] }) => {
       description: "Reliable and efficient facility support and maintenance.",
     },
     {
-      key: "projects",
-      label: "Signature Projects",
-      items: ["AD One", "Vera Building"],
-      description: "Discover our flagship developments and architectural excellence.",
-    },
-    {
       key: "explore",
       label: "Explore",
-      items: ["Communities", "Property Blogs", "Market Report"],
+      items: ["Communities", "Property Blogs", "Market Report", "Signature Projects"],
       description: "Insights, guides, and resources for property seekers and owners.",
     },
     {

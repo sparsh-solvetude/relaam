@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import 'leaflet/dist/leaflet.css';
 import { Navbar } from "@/common/elements/navbar";
 import { Footer } from "@/common/elements/footer";
 import { Cta } from "@/common/elements/cta";
