@@ -27,9 +27,11 @@ export const Item = ({ image, slug, name, location, price, icon }: any) => {
             <p className="text-xs opacity-80">{location}</p>
             <img src="/icons/bed.svg" alt="Beds" className="h-4 ml-2" />
             <p className="text-xs opacity-80">2 Beds</p>
+            <img src="/icons/home.svg" alt="Home" className="h-4 ml-2" />
+            <p className="text-xs opacity-80">Apartment</p>
           </div>
 
-          <p className="text-xs opacity-80 ml-5">Property type - Flat</p>
+          {/* <p className="text-xs opacity-80 ml-5">Property type - Flat</p> */}
 
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center mt-2 gap-2">
