@@ -250,7 +250,7 @@ const ExploreGuideDetail = () => {
 
                 </div>
                 {/* right card */}
-                <div className='w-[30%] h-fit p-5 mt-5 border-2 border-gray-2 rounded-xl bg-[#cbbda5]'>
+                <div className='w-[30%] h-fit p-5 mt-5 border-2 border-gray-2 rounded-xl bg-[#c2d6ef]'>
                     <h1 className='text-[22px] font-medium'>Schedule a call with an area specialist.</h1>
                     <div className='flex flex-col gap-5 mt-5'>
                         <div className='flex gap-5'>
