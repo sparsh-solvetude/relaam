@@ -1,3 +1,4 @@
+import ScrollingText from "@/common/scrollingText";
 import Link from "next/link";
 import React from "react";
 
@@ -109,6 +110,9 @@ export const Footer = ({ properties = [] }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mt-5 mx-10">
+        <ScrollingText />
       </div>
       <div className="max-w-screen-xl mx-auto px-6 sm:px-8 2xl:px-4 mt-12 text-center">
         <p className="text-sm font-light opacity-50">

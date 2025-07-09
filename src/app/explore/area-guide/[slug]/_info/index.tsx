@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 
-export const Info = ({}: any) => {
+export const Info = ({ }: any) => {
   return (
     <div className="w-full bg-white">
       <div className="max-w-screen-2xl px-6 md:px-16 flex flex-col md:flex-row items-start justify-between gap-8">

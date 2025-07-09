@@ -19,7 +19,7 @@ const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   useEffect(() => {
     const observerOptions = {
       root: null,
-      threshold: 0.3, // triggers when 30% of the section is visible
+      threshold: 0.3,
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {

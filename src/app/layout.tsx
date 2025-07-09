@@ -39,6 +39,7 @@ export default async function RootLayout({
         
         <Navbar properties={data.properties} areas={data.areas} />
         {children}
+       
         <Footer properties={data.properties} />
         {/* <Cta /> */}
       </body>
