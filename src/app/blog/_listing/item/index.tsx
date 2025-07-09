@@ -11,11 +11,11 @@ export const BlogItem = ({ image, title, description, price }: any) => {
         alt="property"
         className="w-full h-[15rem] md:h-[20rem] object-cover"
       />
-      <div className="w-full p-4 bg-[#F6F6F6]">
+      <div className="w-full p-4 bg-[#cbbda5]">
         <div className="flex items-center justify-between">
-          <p className="mt-2 text-sm font-light text-[#A6A7AA]">02-08-2024</p>
-          <p className="mt-2 text-sm font-bold text-[#9f3417] flex items-center gap-2">
-            <span className="bg-[#9f3417] h-1 w-1 rounded-full mr-1"></span>
+          <p className="mt-2 text-sm font-light text-[#595d6a]">02-08-2024</p>
+          <p className="mt-2 text-sm font-bold text-[#9f3323] flex items-center gap-2">
+            <span className="bg-[#9f3323] h-1 w-1 rounded-full mr-1"></span>
             07 min read
           </p>
         </div>
@@ -24,7 +24,7 @@ export const BlogItem = ({ image, title, description, price }: any) => {
           Index
         </h3>
         <Link href={"/blog/burjman"}>
-          <button className="bg-[#9f3417] text-white px-4 py-3 mt-4 font-bold text-xs uppercase border border-theme-dark-green hover:bg-gray-200 flex items-center gap-1.5 rounded-md">
+          <button className="bg-[#9f3323] text-white px-4 py-3 mt-4 font-bold text-xs uppercase border border-theme-dark-green hover:bg-gray-200 flex items-center gap-1.5 rounded-md">
             Read More
             <img
               src="/icons/arrow-right-white.svg"

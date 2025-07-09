@@ -60,7 +60,7 @@ export const BlogList = ({}: any) => {
       <div className="w-full py-8 bg-white">
         <div className=" m-auto w-full relative max-w-screen-2xl px-6 md:px-16">
           
-          <h1 className="text-3xl md:text-4xl font-bold text-theme-dark-green mt-8 uppercase leading-normal">
+          <h1 className="text-3xl md:text-4xl font-bold text-theme-dark-green mt-8 text-[#0f1821] leading-normal">
             Stay Informed: The Latest in Luxury Property & Investments
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-12">
@@ -69,7 +69,7 @@ export const BlogList = ({}: any) => {
             ))}
           </div>
           <div className="flex items-center justify-center mt-8">
-            <button className="text-[#A6A7AA] text-xs border border-[#A6A7AA] px-8 py-4 rounded-full">
+            <button className="text-[#0f1821] text-xs border border-[#9f3323] px-8 py-4 rounded-full">
               Load More
             </button>
           </div>
