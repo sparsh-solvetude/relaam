@@ -11,7 +11,7 @@ export const BlogItem = ({ image, title, description, price }: any) => {
         alt="property"
         className="w-full h-[15rem] md:h-[20rem] object-cover"
       />
-      <div className="w-full p-4 bg-[#cbbda5]">
+      <div className="w-full p-4 bg-[#c2d6ef]">
         <div className="flex items-center justify-between">
           <p className="mt-2 text-sm font-light text-[#595d6a]">02-08-2024</p>
           <p className="mt-2 text-sm font-bold text-[#9f3323] flex items-center gap-2">
