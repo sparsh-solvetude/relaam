@@ -24,7 +24,7 @@ export const BlogItem = ({ image, title, description, price }: any) => {
           Index
         </h3>
         <Link href={"/blog/burjman"}>
-          <button className="bg-[#9f3323] text-white px-4 py-3 mt-4 font-bold text-xs uppercase border border-theme-dark-green hover:bg-gray-200 flex items-center gap-1.5 rounded-md">
+          <button className="bg-[#9f3323] text-white px-4 py-3 mt-4 font-bold text-xs hover:bg-gray-200 flex items-center gap-1.5 rounded-full">
             Read More
             <img
               src="/icons/arrow-right-white.svg"
