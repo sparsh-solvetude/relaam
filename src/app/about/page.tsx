@@ -18,6 +18,7 @@ import LuxuryNavbar from '../(home)/_navbar';
 import { Testimonial } from './_testimonials';
 import { Explore } from './_explore';
 import { Awards } from '../(home)/_awards';
+import CornerTab from '../cornerTab';
 // import Footer from '@/common/element/footer/footer';
 
 const AboutPage = () => {
@@ -40,6 +41,7 @@ const AboutPage = () => {
       <LeadershipPage />
       <Team />
       <Awards />
+      <CornerTab />
       {/* <Testimonial /> */}
       {/* <AboutGrid/>
       <JourneyTimeline/> */}

@@ -7,7 +7,7 @@ import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 // Type definitions
 type SubmenuItem = {
   id: string;
-  title: string;
+  title: string; 
   href: string;
 };
 

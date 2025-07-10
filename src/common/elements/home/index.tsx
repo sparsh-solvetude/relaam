@@ -19,7 +19,7 @@ const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   useEffect(() => {
     const observerOptions = {
       root: null,
-      threshold: 0.3,
+      threshold: 0.3, 
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -59,14 +59,14 @@ const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
     <div>
       <Showcase />
         <Element name="section1">
-            <section
-            data-name="section1"
-            ref={setRef('section1')}
-            className='h-screen'
-        >
-        <Search />
-        </section>
-       </Element>
+  <section
+    data-name="section1"
+    ref={setRef('section1')}
+    className="h-auto md:h-screen"
+  >
+    <Search />
+  </section>
+</Element>
       <FeaturedProperty />
       <Services />
       <Expert />

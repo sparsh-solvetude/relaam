@@ -25,3 +25,12 @@ body {
 .react-international-phone-country-selector-button {
   border: none !important;
 }
+
+
+.tabButton {
+  font-family: inherit; /* prevent override */
+}
+
+button {
+  font-family: 'SomeFont', sans-serif;
+}

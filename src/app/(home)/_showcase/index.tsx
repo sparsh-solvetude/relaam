@@ -153,6 +153,7 @@ import {
   useInView,
   easeInOut,
 } from "framer-motion";
+import CornerTab from "@/app/cornerTab";
 
 const slides = [
   "https://media.adcb.com/ADCP/adcp-generic-spotlight-english-240121.mp4",
@@ -209,6 +210,7 @@ export const Showcase = () => {
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
+      <CornerTab />
       <motion.video
         src={slides[currentSlide]}
         autoPlay

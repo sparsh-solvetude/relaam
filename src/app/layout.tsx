@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import { Navbar } from "@/common/elements/navbar";
 import { Footer } from "@/common/elements/footer";
 import { Cta } from "@/common/elements/cta";
+import CornerTab from "./cornerTab";
 
 
 export const metadata: Metadata = {
@@ -36,10 +37,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        
+
         <Navbar properties={data.properties} areas={data.areas} />
         {children}
-       
+        {/* <CornerTab /> */}
         <Footer properties={data.properties} />
         {/* <Cta /> */}
       </body>
