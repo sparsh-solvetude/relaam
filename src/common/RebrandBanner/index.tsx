@@ -8,7 +8,7 @@ export default function RebrandBanner() {
   if (!visible) return null
 
   return (
-    <div className="w-full flex flex-col md:flex-row gap-6 md:gap-12 items-center justify-center bg-[#cbbda5] text-black px-4 py-6 md:py-3 text-center relative top-0">
+    <div className="w-full h-60 flex flex-col md:flex-row gap-6 md:gap-12 items-center justify-center bg-[#cbbda5] text-black px-4 py-6 md:py-3 text-center relative top-0">
       <img
         src="https://www.adcp.ae/system/images/adcp-logo-white.svg"
         alt="logo"
