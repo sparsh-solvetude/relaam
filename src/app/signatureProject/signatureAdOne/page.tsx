@@ -17,6 +17,7 @@ const slides = [
 const title = "Signature Projects";
 const subtitle = "AD One";
 
+
 const SignatureAdOne = () => {
     return (
         <div className="w-full">
