@@ -16,8 +16,8 @@ const ContentAgentCard = () => {
                     />
                     <div>
                         <h1 className='font-semibold'>Mohammad AL-Bake</h1>
-                        <p className='text-[#6F6F6F]'>Million Homes Real Estate</p>
-                        <div className='text-blue-600 text-[12px]'> icon Verified</div>
+                        <p className='text-[#6F6F6F]'>Relaam Real Estate</p>
+                        {/* <div className='text-blue-600 text-[12px]'> icon Verified</div> */}
                     </div>
                 </div>
 

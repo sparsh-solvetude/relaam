@@ -34,27 +34,27 @@ const SignatureAdOne = () => {
 
                     </div>
 
-                    <p className='text-[#595d6a]'>Luxury living at its very best, AD One Tower is filled with unmatched conveniences, situated in the heart of Abu Dhabi’s Capital District and designed for a perfect living experience.</p>
-                    <p className='text-[#595d6a]'>Built with Chilean design and Arabic flair, AD One Tower houses an exclusive collection of chic Soho-style lofts; one, two and three-bedroom apartments; and elegant duplex penthouses, offering residents a stylish, cosmopolitan home in tasteful surroundings. Designed to inspire the senses, every apartment incorporates a careful application of imagination that celebrates modern living.</p>
-                    <p className='text-[#595d6a]'>Offering a lively and urban lifestyle, AD One Tower has been designed to ensure that many of the spacious apartments enjoy spectacular views across Abu Dhabi. Residents can also enjoy a range of amenities and facilities including an enormous gymnasium and indoor fitness suite, an outdoor sports track for joggers, a 25m swimming pool and adjoining children’s pool, as well as secure car parking and a grocery and café at podium and ground level.
+                    <p className='font-light opacity-80 text-[#595d6a]'>Luxury living at its very best, AD One Tower is filled with unmatched conveniences, situated in the heart of Abu Dhabi’s Capital District and designed for a perfect living experience.</p>
+                    <p className='font-light opacity-80 text-[#595d6a]'>Built with Chilean design and Arabic flair, AD One Tower houses an exclusive collection of chic Soho-style lofts; one, two and three-bedroom apartments; and elegant duplex penthouses, offering residents a stylish, cosmopolitan home in tasteful surroundings. Designed to inspire the senses, every apartment incorporates a careful application of imagination that celebrates modern living.</p>
+                    <p className='font-light opacity-80 text-[#595d6a]'>Offering a lively and urban lifestyle, AD One Tower has been designed to ensure that many of the spacious apartments enjoy spectacular views across Abu Dhabi. Residents can also enjoy a range of amenities and facilities including an enormous gymnasium and indoor fitness suite, an outdoor sports track for joggers, a 25m swimming pool and adjoining children’s pool, as well as secure car parking and a grocery and café at podium and ground level.
 
                     </p>
 
                     <div className='flex w-full gap-10'>
                         <div>
                             <p className='text-[#595d6a]'>Property Type</p>
-                            <h1 className='font-medium'>Apartment</h1>
-                            <h1 className='font-medium'>Showroom</h1>
+                            <h1 className='font-light opacity-80'>Apartment</h1>
+                            <h1 className='font-light opacity-80'>Showroom</h1>
                         </div>
                         <div>
                             <p className='text-[#595d6a]'>Unit Type</p>
-                            <h1 className='font-medium'>1, 2, 3 & 4 Bedrooms</h1>
-                            <h1 className='font-medium'>3 showrooms</h1>
+                            <h1 className='font-light opacity-80'>1, 2, 3 & 4 Bedrooms</h1>
+                            <h1 className='font-light opacity-80'>3 showrooms</h1>
                         </div>
                         <div>
                             <p className='text-[#595d6a]'>Size</p>
-                            <h1 className='font-medium'>689 to 2,314 Sq Ft</h1>
-                            <h1 className='font-medium'>Various Sizes</h1>
+                            <h1 className='font-light opacity-80'>689 to 2,314 Sq Ft</h1>
+                            <h1 className='font-light opacity-80'>Various Sizes</h1>
                         </div>
 
 

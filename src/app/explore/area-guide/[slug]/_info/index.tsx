@@ -301,7 +301,7 @@ export const Info = ({ }: any) => {
                 </h3>
               </div>
               <p className="text-sm text-[#6F6F6F]">
-                Million Homes Real Estate
+                Relaam Real Estate
               </p>
               <div className="flex items-center justify-start gap-1 mt-0.5">
                 <img
