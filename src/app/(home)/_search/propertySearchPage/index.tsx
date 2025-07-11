@@ -7,6 +7,47 @@ const transition = {
   ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
 };
 
+const Dropdown = ({
+  id,
+  label,
+  options,
+  animation,
+}: {
+  id: string;
+  label: string;
+  options: string[];
+  animation?: any;
+}) => (
+  <motion.div className="flex flex-col" {...animation}>
+    <label htmlFor={id} className="text-lg text-black mb-1 ml-3">
+      {label}
+    </label>
+    <div className="relative w-full">
+      <select
+        id={id}
+        className="w-full text-theme-red px-3 py-3 text-sm border border-gray-300 rounded-full focus:outline-none appearance-none pr-10"
+      >
+        {options.map((option, i) => (
+          <option key={i} value={i + 1}>
+            {option}
+          </option>
+        ))}
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+        <svg
+          className="w-4 h-4 text-gray-400"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
+  </motion.div>
+);
+
 const PropertySearchPage = ({
   searchRef,
   disableAnimation = false,
@@ -28,86 +69,81 @@ const PropertySearchPage = ({
 
   const shouldAnimate = !disableAnimation && isInView;
   const animationProps = (delay: number) =>
-    !isModal
-      ? {
+    disableAnimation
+      ? {}
+      : {
           initial: { opacity: 0, y: 40 },
-          animate: shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 },
+          animate: { opacity: 1, y: 0 },
           transition: { ...transition, delay },
-        }
-      : {};
+        };
 
   return (
     <div
       ref={targetRef as React.RefObject<HTMLDivElement>}
-      className="relative col-span-1 md:col-span-3 flex items-center justify-center py-6 px-4 sm:px-6 lg:px-8 w-full min-h-[250px]"
+      className="relative col-span-1 md:col-span-3 flex items-center justify-center py-6 px-0 sm:px-6 lg:px-8 w-full md:h-auto min-h-[250px]"
     >
       {!isInModal && (
         <>
           <img
             src="/images/bg-pattern.jpg"
             alt="Hero"
-            className="w-full h-full object-cover rounded-lg shadow-lg absolute inset-0"
+            className="hidden md:block w-full h-full object-cover rounded-lg shadow-lg absolute inset-0"
           />
-          <div className="absolute inset-0 bg-black opacity-50 rounded-lg" />
+          <div className="hidden md:block absolute inset-0 bg-black opacity-50 rounded-lg" />
         </>
       )}
 
       <div className="z-30 bg-transparent w-full max-w-6xl">
         <motion.h2
-          className="text-xl md:text-3xl lg:text-4xl font-bold text-white text-center md:text-left"
+          className="lg:text-4xl font-bold text-[#9f3323] text-4xl md:text-xl mt-10 md:mt-0 md:text-white text-center md:text-left"
           {...animationProps(0.1)}
         >
           Property Search
         </motion.h2>
 
         <motion.p
-          className="text-sm md:text-base lg:text-md text-white mt-2 text-center md:text-left"
+          className="lg:text-md text-black text-lg md:text-sm md:text-white mt-2 text-center md:text-left"
           {...animationProps(0.2)}
         >
           Find your dream home today
         </motion.p>
 
         {/* Mobile Layout */}
-        <motion.div
-          className="block md:hidden mt-4 p-4 rounded-xl bg-white shadow-md border border-[#9f3517] space-y-3"
-          {...animationProps(0.3)}
-        >
-          <div className="flex flex-col">
-            <label htmlFor="location" className="text-xs text-black mb-1">
-              Location
-            </label>
-            <select
-              id="location"
-              className="w-full text-theme-red px-3 py-2 text-sm border border-gray-300 rounded focus:outline-none"
-            >
-              <option value="1">Location 1</option>
-              <option value="2">Location 2</option>
-              <option value="3">Location 3</option>
-            </select>
-          </div>
-
-          <div className="flex flex-col">
-            <label htmlFor="property" className="text-xs text-black mb-1">
-              Property Type
-            </label>
-            <select
-              id="property"
-              className="w-full px-3 py-2 text-sm border border-gray-300 rounded focus:outline-none"
-            >
-              <option value="1">Off Plan</option>
-              <option value="2">Type 2</option>
-              <option value="3">Type 3</option>
-            </select>
-          </div>
-
+        <div className="block md:hidden mt-10 pt-5 px-4 rounded-xl space-y-4">
+          <Dropdown
+            id="location-mobile"
+            label="Location"
+            options={["Location 1", "Location 2", "Location 3"]}
+            animation={animationProps(0.3)}
+          />
+          <Dropdown
+            id="price-mobile"
+            label="Price"
+            options={["AED min - AED max", "AED min - AED max", "AED min - AED max"]}
+            animation={animationProps(0.3)}
+          />
+          <Dropdown
+            id="type-mobile"
+            label="Property Type"
+            options={["Off Plan", "Type 2", "Type 3"]}
+            animation={animationProps(0.3)}
+          />
+          <Dropdown
+            id="bedrooms-mobile"
+            label="Number of Bedrooms"
+            options={["1", "2", "3"]}
+            animation={animationProps(0.4)}
+          />
           <motion.button
-            className="w-full bg-[#9f3323] text-white px-4 py-3 rounded-md font-semibold uppercase text-sm"
+            style={{ marginTop: "60px" }}
+            className="w-full bg-[#9f3323] text-white px-4 py-4 rounded-full font-semibold uppercase text-sm"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3 }}
+            {...animationProps(0.5)}
           >
             Search
           </motion.button>
-        </motion.div>
+        </div>
 
         {/* Desktop Layout */}
         <motion.div
@@ -115,36 +151,62 @@ const PropertySearchPage = ({
           {...animationProps(0.3)}
         >
           {/* Location */}
-          <div className="flex flex-col items-start gap-1 w-auto md:w-1/4 border-none md:border-r border-cream px-3 py-1">
-            <label htmlFor="location" className="text-xs text-black px-1">
+          <div className="relative flex flex-col items-start gap-1 w-1/4 px-3 py-1">
+            <label htmlFor="location-desktop" className="text-lg text-black px-1">
               Location
             </label>
-            <select
-              id="location"
-              className="w-full text-theme-red px-0 text-sm bg-transparent focus:outline-none"
-            >
-              <option value="1">Location 1</option>
-              <option value="2">Location 2</option>
-              <option value="3">Location 3</option>
-            </select>
+            <div className="relative w-full">
+              <select
+                id="location-desktop"
+                className="w-full text-theme-red px-0 text-sm bg-transparent focus:outline-none appearance-none pr-10"
+              >
+                <option value="1">Location 1</option>
+                <option value="2">Location 2</option>
+                <option value="3">Location 3</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-1 flex items-center">
+                <svg
+                  className="w-4 h-4 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
           </div>
 
           {/* Property Type */}
-          <div className="hidden md:flex flex-col items-start gap-1 w-1/4 px-3 py-1">
-            <label htmlFor="property" className="text-xs text-gray-500 px-1">
+          <div className="relative hidden md:flex flex-col items-start gap-1 w-1/4 px-3 py-1">
+            <label htmlFor="type-desktop" className="text-xs text-gray-500 px-1">
               Property Type
             </label>
-            <select
-              id="property"
-              className="w-full px-0 text-sm bg-transparent focus:outline-none"
-            >
-              <option value="1">Off Plan</option>
-              <option value="2">Type 2</option>
-              <option value="3">Type 3</option>
-            </select>
+            <div className="relative w-full">
+              <select
+                id="type-desktop"
+                className="w-full text-sm bg-transparent focus:outline-none appearance-none pr-10"
+              >
+                <option value="1">Off Plan</option>
+                <option value="2">Type 2</option>
+                <option value="3">Type 3</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-1 flex items-center">
+                <svg
+                  className="w-4 h-4 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
           </div>
 
-          {/* Button */}
+          {/* Search Button */}
           <motion.button
             className="bg-[#9f3323] text-white px-4 py-4 w-auto md:w-1/4 h-full rounded-full font-playfair uppercase"
             whileHover={{ scale: 1.05 }}

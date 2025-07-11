@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MobileMenu } from "./mobile";
 import { useRouter } from "next/navigation";
 import { Modal } from "@/common/modal";
@@ -26,6 +26,31 @@ export const Navbar = ({ properties = [], areas = [] }) => {
   const handleMouseLeave = () => {
     setOpenDropdown(null);
   };
+
+  const [scrolled, setScrolled] = useState(false);
+  
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (currentScrollY > 20) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      }, 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const dropdownMenus = [
     {
@@ -187,23 +212,34 @@ export const Navbar = ({ properties = [], areas = [] }) => {
       {/* Mobile Menu Overlay */}
       {showMobileMenu && <MobileMenu showSet={setShowMobileMenu} />}
 
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-300 flex justify-center items-center gap-5 py-3 shadow-md">
-        <button
-          onClick={() => setActiveModal("search")}
-          className="text-[#0f1821] font-semibold bg-[#e9e7e4] px-4 py-2 rounded-full border border-[#0f1821] w-2/5"
-        >
-          Search
-        </button>
-        <button
-          onClick={() => setActiveModal("contact")}
-          className="text-white font-semibold bg-[#9f3323] px-4 py-2 rounded-full w-2/5"
-        >
-          Get in Touch
-        </button>
-      </div>
-      <Modal isOpen={!!activeModal} onClose={() => setActiveModal(null)}>
-        {activeModal === "search" && <PropertySearchPage searchRef={searchRef} isModal={true} />}
-        {activeModal === "contact" && <OurPortalsPage searchRef={searchRef} isModal={true}  />}
+      {scrolled && (
+        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#e4d5d4] border-t border-gray-100 flex justify-center items-center gap-5 py-5 shadow-md">
+          <button
+            onClick={() => setActiveModal("search")}
+            className="text-[#0f1821] font-semibold bg-[#e9e7e4] px-4 py-2 rounded-full border border-[#0f1821] w-2/5"
+          >
+            Search
+          </button>
+          <button
+            onClick={() => setActiveModal("contact")}
+            className="text-white font-semibold bg-[#9f3323] px-4 py-2 rounded-full w-2/5"
+          >
+            Get in Touch
+          </button>
+        </div>
+      )}
+
+      <Modal
+        isOpen={!!activeModal}
+        onClose={() => setActiveModal(null)}
+        activeModal={activeModal}
+      >
+        {activeModal === "search" && (
+          <PropertySearchPage searchRef={searchRef} isModal={true} />
+        )}
+        {activeModal === "contact" && (
+          <OurPortalsPage searchRef={searchRef} isModal={true} />
+        )}
       </Modal>
     </div>
   );

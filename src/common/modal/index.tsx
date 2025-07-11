@@ -1,31 +1,8 @@
-// import React from "react";
-
-// export const Modal = ({ isOpen, onClose, children }: any) => {
-//   if (!isOpen) return null;
-
-//   return (
-//     <div className="fixed inset-0  bg-black bg-opacity-50 flex justify-center items-center z-[1000]">
-//       <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full p-6 relative mx-4">
-//         <button
-//           onClick={onClose}
-//           className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl"
-//         >
-//           &times;
-//         </button>
-//         {children}
-//       </div>
-//     </div>
-//   );
-// };
-
-
-
 import React, { useEffect, useRef } from "react";
 
-export const Modal = ({ isOpen, onClose, children }: any) => {
+export const Modal = ({ isOpen, onClose, children, activeModal }: any) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Close when clicking outside the modal
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -47,19 +24,24 @@ export const Modal = ({ isOpen, onClose, children }: any) => {
 
   if (!isOpen) return null;
 
+  const modalHeightClass =
+    activeModal === "contact"
+      ? "h-auto  mx-2 rounded-lg" 
+      : "h-full"; 
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000] md:hidden">
       <div
         ref={modalRef}
-        className="bg-white rounded-lg shadow-lg max-w-3xl w-full p-6 relative mx-4"
+        className={`bg-[#c2d6ef] w-full overflow-y-auto shadow-lg p-6 relative pt-20 ${modalHeightClass}`}
       >
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl"
+          className="absolute top-0 right-4 text-gray-600 hover:text-black text-[50px]"
         >
           &times;
         </button>
-        {children}
+        <div className="mt-5">{children}</div>
       </div>
     </div>
   );
