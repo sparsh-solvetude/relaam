@@ -6,7 +6,7 @@ import React from "react";
 export default function CornerTab() {
   const router = useRouter();
   const navigateToPage = () => {
-    router.push("/"); // Replace with your target route
+    router.push("/about"); // Replace with your target route
   };
 
   return (

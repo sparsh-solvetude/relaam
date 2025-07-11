@@ -2,56 +2,90 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MobileDropdown } from "./dropdown";
 
+// const dropdownMenus = [
+//   {
+//     key: "about",
+//     label: "About Us",
+//     items: ["Relaam Legacy", "Recognition", "Leadership", "Newsroom"],
+//   },
+//   {
+//     key: "rent",
+//     label: "Rent",
+//     items: [
+//       "All Properties",
+//       "Apartments",
+//       "Villas",
+//       "Townhouses",
+//       "Offices",
+//       "Retail",
+//       "Warehouse",
+//     ],
+//   },
+//   {
+//     key: "property",
+//     label: "Property Management",
+//     items: ["Landlord Services", "Leasing Services"],
+//   },
+//   {
+//     key: "facilities",
+//     label: "Facilities Management",
+//     items: [
+//       "Landlords Services",
+//       "Tenants Services",
+//       "Contractors Services",
+//     ],
+  
+//   },
+//   {
+//     key: "explore",
+//     label: "Explore",
+//     items: [
+//       "Communities",
+//       "Property Blogs",
+//       "Market Report",
+//       "Signature Projects",
+//     ],
+//   },
+//   {
+//     key: "contact",
+//     label: "Contact",
+//     items: ["Inquire via Lead Form", "Call", "WhatsApp"],
+//   },
+// ];
 const dropdownMenus = [
   {
     key: "about",
     label: "About Us",
-    items: ["Relaam Legacy", "Recognition", "Leadership", "Newsroom"],
+    items: ["Relaam Legacy", "Services", "Benefits", "Recognition"],
   },
   {
-    key: "rent",
-    label: "Rent",
+    key: "focus",
+    label: "Focus",
     items: [
-      "All Properties",
-      "Apartments",
-      "Villas",
-      "Townhouses",
-      "Offices",
-      "Retail",
-      "Warehouse",
+      "Property Management",
+      "Facilities Management",
+      "Leasing",
+      "OA",
     ],
   },
-  {
-    key: "property",
-    label: "Property Management",
-    items: ["Landlord Services", "Leasing Services"],
-  },
-  {
-    key: "facilities",
-    label: "Facilities Management",
-    items: [
-      "Landlords Services",
-      "Tenants Services",
-      "Contractors Services",
-    ],
-  
-  },
+ 
   {
     key: "explore",
     label: "Explore",
     items: [
-      "Communities",
-      "Property Blogs",
-      "Market Report",
       "Signature Projects",
+      "Neighbourhoods",
+      "Featured",
+      "Reports",
     ],
   },
   {
     key: "contact",
     label: "Contact",
-    items: ["Inquire via Lead Form", "Call", "WhatsApp"],
+    items: ["Contact Form", "Careers Form", "Branches", "Call", "Whatsapp", "FAQ"],
   },
 ];
+
 
 export const MobileMenu = ({ showSet }: any) => {
   return (
@@ -76,6 +110,8 @@ export const MobileMenu = ({ showSet }: any) => {
           <img src="/icons/close.svg" alt="close" className="h-8" />
         </button>
 
+         <img src="/logo.webp" alt="logo" className="h-14 relative bottom-7" />
+
         {/* Animated content */}
         <motion.div
           initial={{ x: "-100%", opacity: 0 }}
@@ -84,12 +120,12 @@ export const MobileMenu = ({ showSet }: any) => {
           className="flex flex-col gap-6"
         >
           {dropdownMenus.map((menu) => (
-            <div key={menu.key} className="flex flex-col gap-1">
-              <MobileDropdown
+            <div key={menu.key} className="flex flex-col gap-2 ml-5">
+              <MobileDropdown 
                 title={menu.label}
                 items={menu.items.map((item) => ({
                   name: item,
-                  link: "#", 
+                  link: "", 
                 }))}
               />
             </div>
@@ -101,53 +137,3 @@ export const MobileMenu = ({ showSet }: any) => {
 };
 
 
-// import React from "react";
-// import { MobileDropdown } from "./dropdown";
-
-// export const MobileMenu = ({ showSet }: any) => {
-//   return (
-//     <div className="fixed top-0 left-0 w-full h-full bg-dark z-50">
-//       <div className="flex flex-col justify-start items-start gap-6 px-8 py-16 h-full w-full relative">
-//         <button
-//           className="absolute top-4 right-4"
-//           onClick={() => showSet(false)}
-//         >
-//           <img src="/icons/close.svg" alt="close" className="h-8" />
-//         </button>
-//         <a href="/about-us" className="text-white text-2xl font-bold">
-//           About
-//         </a>
-
-//         <MobileDropdown
-//           title="Why Dubai?"
-//           items={[
-//             { name: "Dubai Guide", link: "/" },
-//             { name: "Invest In Dubai", link: "/" },
-//           ]}
-//         />
-//         <MobileDropdown
-//           title="Properties"
-//           items={[
-//             { name: "Bentley Villas", link: "/property/bentley-villas" },
-//             { name: "Mira Oasis", link: "/property/mira-oasis" },
-//             { name: "Mira Townhouses", link: "/property/mira-townhouses" },
-//             { name: "Mira Villas", link: "/property/mira-villas" },
-//             { name: "View All", link: "/property" },
-//           ]}
-//         />
-//         <MobileDropdown
-//           title="News"
-//           items={[
-//             { name: "Blogs", link: "/blog" },
-//             { name: "Press Coverage", link: "/press-coverage" },
-//             { name: "Events", link: "/event" },
-//             { name: "View All", link: "/blog/latest-news" },
-//           ]}
-//         />
-//         <a href="/real-estate-agent-dubai" className="text-white text-2xl font-bold">
-//           Agent
-//         </a>
-//       </div>
-//     </div>
-//   );
-// };
