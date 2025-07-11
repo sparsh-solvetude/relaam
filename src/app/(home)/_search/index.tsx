@@ -8,6 +8,7 @@ import PropertySearchPage from "./propertySearchPage";
 export const Search = () => {
   const searchRef = useRef(null);
 
+  
   return (
     <div ref={searchRef} className="text-black h-auto md:h-screen">
       <RebrandBanner />
