@@ -109,6 +109,7 @@ const PropertySearchPage = ({
         </motion.p>
 
         {/* Mobile Layout */}
+        
         <div className="block md:hidden mt-10 pt-5 px-4 rounded-xl space-y-4">
           <Dropdown
             id="location-mobile"

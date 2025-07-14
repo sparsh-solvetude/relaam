@@ -37,17 +37,17 @@ const amenities = [
 const SignatureProject = () => {
   return (
     <div>
-      <div className="h-[400px] md:h-screen w-full">
+      <div className="h-screen w-full">
         <Image
           src="/images/Signature/Signature_bg.jpg"
           alt="banner"
           width={1920}
           height={1080}
-          className="h-[400px] md:h-screen w-full object-cover"
+          className="h-screen w-full object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-50"></div>
-        <div className="absolute top-0 left-0 w-full h-[400px] md:h-screen">
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-12 flex flex-col items-center justify-center h-[400px] md:h-screen pt-20 text-white text-center">
+        <div className="absolute top-0 left-0 w-full h-screen">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-12 flex flex-col items-center justify-center h-screen pt-20 text-white text-center">
             <h1 className="text-[50px] font-bold text-theme-dark-green md:leading-base w-full  font-playfair">
               Signature Projects
             </h1>
@@ -60,14 +60,15 @@ const SignatureProject = () => {
           </div>
         </div>
       </div>
-      <div className="px-20 py-5 flex gap-10 w-full">
+
+      <div className="flex flex-col-reverse md:flex-row py-5 gap-10 w-full px-5 md:px-20">
         <div className="w-full">
           <Image
             src="/images/Signature/adcp-3.jpg"
             alt="banner"
             width={500}
             height={300}
-            className="h-[350px] w-full object-cover rounded-xl"
+            className="h-[350px] w-full mt-8 object-cover rounded-xl"
           />
         </div>
         <div className="w-full">
@@ -86,7 +87,8 @@ const SignatureProject = () => {
           </a>
         </div>
       </div>
-      <div className="px-20 py-5 flex gap-10 w-full">
+
+      <div className="flex flex-col md:flex-row py-5 gap-10 w-full px-5 md:px-20">
         <div className="w-full">
           <h2 className="text-[32px] mt-7 text-[#1e2a45]">Vera Building</h2>
           <p>
@@ -106,13 +108,13 @@ const SignatureProject = () => {
             alt="banner"
             width={500}
             height={300}
-            className="h-[350px]  w-full object-cover rounded-xl"
+            className="h-[350px] w-full mt-8 object-cover rounded-xl"
           />
         </div>
       </div>
 
-      <div className="p-10">
-        <div className="text-black flex flex-col justify-center items-center text-center  my-5">
+      <div className="px-5 md:px-10 py-10">
+        <div className="text-black flex flex-col justify-center items-center text-center my-5">
           <h2 className="text-5xl font-bold mb-2 leading-base">
             Featured Properties
           </h2>
@@ -122,8 +124,11 @@ const SignatureProject = () => {
         </div>
         <div className="flex justify-center flex-wrap w-full gap-10">
           {amenities.map((amenity, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div className="group w-full max-w-[w-[350px]] h-[25rem] rounded-xl text-center flex flex-col items-center gap-1 relative cursor-pointer overflow-hidden">
+            <div
+              key={index}
+              className="flex flex-col items-center w-full md:w-96"
+            >
+              <div className="group w-full h-[25rem] rounded-xl text-center flex flex-col items-center relative cursor-pointer overflow-hidden">
                 <div className="relative w-full h-full overflow-hidden rounded-xl">
                   <Image
                     src={amenity.icon}

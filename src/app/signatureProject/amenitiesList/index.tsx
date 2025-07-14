@@ -16,17 +16,17 @@ const AmenitiesList = () => {
     return (
         <div>
             <h1 className='font-semibold text-[22px]'>Amenities that come with this property</h1>
-            <div className='flex flex-wrap gap-5 mt-5'>
-                {amenities.map((amenity, index) => (
-                    <div key={index} className='flex gap-5 w-52 items-center'>
+            <div className='flex flex-wrap gap-2 md:gap-5 mt-5'>
+                {amenities?.map((amenity, index) => (
+                    <div key={index} className='flex gap-2 md:gap-5 w-40 md:w-52 items-center'>
                         <Image
-                            src={amenity.icon}
-                            alt={amenity.label}
+                            src={amenity?.icon}
+                            alt={amenity?.label}
                             width={50}
                             height={50}
                             className='w-10 h-10 object-cover'
                         />
-                        <p className='text-[#595d6a]'>{amenity.label}</p>
+                        <p className='text-[#595d6a]'>{amenity?.label}</p>
                     </div>
                 ))}
             </div>

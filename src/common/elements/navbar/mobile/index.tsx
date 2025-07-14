@@ -1,57 +1,10 @@
+
+
+
 import React from "react";
 import { motion } from "framer-motion";
 import { MobileDropdown } from "./dropdown";
 
-// const dropdownMenus = [
-//   {
-//     key: "about",
-//     label: "About Us",
-//     items: ["Relaam Legacy", "Recognition", "Leadership", "Newsroom"],
-//   },
-//   {
-//     key: "rent",
-//     label: "Rent",
-//     items: [
-//       "All Properties",
-//       "Apartments",
-//       "Villas",
-//       "Townhouses",
-//       "Offices",
-//       "Retail",
-//       "Warehouse",
-//     ],
-//   },
-//   {
-//     key: "property",
-//     label: "Property Management",
-//     items: ["Landlord Services", "Leasing Services"],
-//   },
-//   {
-//     key: "facilities",
-//     label: "Facilities Management",
-//     items: [
-//       "Landlords Services",
-//       "Tenants Services",
-//       "Contractors Services",
-//     ],
-  
-//   },
-//   {
-//     key: "explore",
-//     label: "Explore",
-//     items: [
-//       "Communities",
-//       "Property Blogs",
-//       "Market Report",
-//       "Signature Projects",
-//     ],
-//   },
-//   {
-//     key: "contact",
-//     label: "Contact",
-//     items: ["Inquire via Lead Form", "Call", "WhatsApp"],
-//   },
-// ];
 const dropdownMenus = [
   {
     key: "about",
@@ -61,33 +14,31 @@ const dropdownMenus = [
   {
     key: "focus",
     label: "Focus",
-    items: [
-      "Property Management",
-      "Facilities Management",
-      "Leasing",
-      "OA",
-    ],
+    items: ["Property Management", "Facilities Management", "Leasing", "OA"],
   },
- 
+
   {
     key: "explore",
     label: "Explore",
-    items: [
-      "Signature Projects",
-      "Neighbourhoods",
-      "Featured",
-      "Reports",
-    ],
+    items: ["Signature Projects", "Neighbourhoods", "Featured", "Reports"],
   },
   {
     key: "contact",
     label: "Contact",
-    items: ["Contact Form", "Careers Form", "Branches", "Call", "Whatsapp", "FAQ"],
+    items: [
+      "Contact Form",
+      "Careers Form",
+      "Branches",
+      "Call",
+      "Whatsapp",
+      "FAQ",
+    ],
   },
 ];
 
-
 export const MobileMenu = ({ showSet }: any) => {
+  const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
+
   return (
     <div className="fixed top-0 left-0 w-full h-full z-50 overflow-hidden">
       {/* Background image */}
@@ -110,7 +61,7 @@ export const MobileMenu = ({ showSet }: any) => {
           <img src="/icons/close.svg" alt="close" className="h-8" />
         </button>
 
-         <img src="/logo.webp" alt="logo" className="h-14 relative bottom-7" />
+        <img src="/logo.webp" alt="logo" className="h-14 relative bottom-7" />
 
         {/* Animated content */}
         <motion.div
@@ -121,12 +72,16 @@ export const MobileMenu = ({ showSet }: any) => {
         >
           {dropdownMenus.map((menu) => (
             <div key={menu.key} className="flex flex-col gap-2 ml-5">
-              <MobileDropdown 
+              <MobileDropdown
                 title={menu.label}
                 items={menu.items.map((item) => ({
                   name: item,
-                  link: "", 
+                  link: "", // Add real links here
                 }))}
+                isOpen={openDropdown === menu.key}
+                onToggle={() =>
+                  setOpenDropdown(openDropdown === menu.key ? null : menu.key)
+                }
               />
             </div>
           ))}
@@ -135,5 +90,3 @@ export const MobileMenu = ({ showSet }: any) => {
     </div>
   );
 };
-
-

@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, easeInOut } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface DynamicCarouselProps {
   slides: string[];
@@ -60,7 +59,7 @@ export const Carousel = ({ slides, title, subtitle }: DynamicCarouselProps) => {
   return (
     <div
       ref={contentRef}
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden  flex flex-col items-center"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -81,31 +80,36 @@ export const Carousel = ({ slides, title, subtitle }: DynamicCarouselProps) => {
         />
       </motion.div>
 
-      {/* Overlay with bg-black and opacity-70 */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-30 z-0" />
 
-
-      <div className="absolute inset-0 flex flex-col  justify-center z-10 text-white px-10 ">
-        <h1 className="SemiBold text-white text-3xl font-bold md:leading-base">{title}</h1>
-        <h1 className="SemiBold  text-white  mt-2 text-6xl font-bold md:leading-base">{subtitle}</h1>
+      {/* Title & Subtitle */}
+      <div className="absolute inset-0 flex flex-col justify-center z-10 text-white px-5 md:px-10">
+        <h1 className="SemiBold text-white text-3xl font-bold md:leading-base">
+          {title}
+        </h1>
+        <h1 className="SemiBold text-white mt-2 text-6xl font-bold md:leading-base">
+          {subtitle}
+        </h1>
       </div>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center space-x-4 z-10">
-        <button
-          onClick={prevSlide}
-          className="bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
-          aria-label="Previous Slide"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
-          aria-label="Next Slide"
-        >
-          <ChevronRight size={24} />
-        </button>
-      </div>
+      {/* Dot Navigation */}
+      <motion.div
+        className="absolute z-10 bottom-6 md:bottom-10  transform -translate-x-1/2 flex space-x-2"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5, ease: easeInOut }}
+      >
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`h-2 bg-gray rounded-full hover:bg-white cursor-pointer ${
+              currentSlide === index ? "w-10" : "w-2"
+            }`}
+            onClick={() => setCurrentSlide(index)}
+          ></div>
+        ))}
+      </motion.div>
     </div>
   );
 };
