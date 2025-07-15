@@ -73,7 +73,7 @@ const SignatureProject = () => {
         </div>
         <div className="w-full">
           <h2 className="text-[32px] mt-7 text-[#1e2a45]">AD One</h2>
-          <p>
+          <p className="title">
             Luxury living at its very best, AD One Tower is filled with
             unmatched conveniences, situated in the heart of Abu Dhabi’s Capital
             District and designed for a perfect living experience. AD One Tower
@@ -82,7 +82,7 @@ const SignatureProject = () => {
             offering residents a stylish, cosmopolitan home in tasteful
             surroundings.{" "}
           </p>
-          <a href="#" className="text-[#9f3323] mt-5 absolute">
+          <a href="/signatureProject/AdOne" className="text-[#9f3323] mt-5 absolute">
             Read more
           </a>
         </div>
@@ -91,14 +91,14 @@ const SignatureProject = () => {
       <div className="flex flex-col md:flex-row py-5 gap-10 w-full px-5 md:px-20">
         <div className="w-full">
           <h2 className="text-[32px] mt-7 text-[#1e2a45]">Vera Building</h2>
-          <p>
+          <p className="title">
             Located in Al Raha Beach in Abu Dhabi, VERA is a brand-new, modern
             building with splendid views of Al Raha Beach Canals. Designed to
             offer a stylish living experience with all the modern conveniences,
             VERA offers one and two-bedroom apartments with open plan living,
             large balconies and exclusive facilities.{" "}
           </p>
-          <a href="#" className="text-[#9f3323] mt-5 absolute">
+          <a href="/signatureProject" className="text-[#9f3323] mt-5 absolute">
             Read more
           </a>
         </div>

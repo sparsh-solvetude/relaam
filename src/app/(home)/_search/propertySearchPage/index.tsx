@@ -7,6 +7,17 @@ const transition = {
   ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
 };
 
+const fadeOnlyProps = (delay = 0) => ({
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { ...transition, delay },
+});
+
+const hoverProps = {
+  whileHover: { scale: 1.05 },
+  transition: { duration: 0.2 },
+};
+
 const Dropdown = ({
   id,
   label,
@@ -41,7 +52,12 @@ const Dropdown = ({
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </div>
     </div>
@@ -67,13 +83,14 @@ const PropertySearchPage = ({
     margin: "-100px 0px",
   });
 
-  const shouldAnimate = !disableAnimation && isInView;
+  const shouldAnimate = !disableAnimation && (isInView || isModal);
+
   const animationProps = (delay: number) =>
     disableAnimation
       ? {}
       : {
           initial: { opacity: 0, y: 40 },
-          animate: { opacity: 1, y: 0 },
+          animate: shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 },
           transition: { ...transition, delay },
         };
 
@@ -95,21 +112,20 @@ const PropertySearchPage = ({
 
       <div className="z-30 bg-transparent w-full max-w-6xl">
         <motion.h2
-          className="lg:text-4xl font-bold text-[#9f3323] text-4xl md:text-xl mt-10 md:mt-0 md:text-white text-center md:text-left"
-          {...animationProps(0.1)}
+          className="lg:text-4xl font-bold text-[#9f3323] text-4xl md:text-xl mt-5 md:mt-0 md:text-white text-center md:text-left"
+          {...animationProps(0.4)}
         >
           Property Search
         </motion.h2>
 
         <motion.p
           className="lg:text-md text-black text-lg md:text-sm md:text-white mt-2 text-center md:text-left"
-          {...animationProps(0.2)}
+          {...animationProps(0.5)}
         >
           Find your dream home today
         </motion.p>
 
         {/* Mobile Layout */}
-        
         <div className="block md:hidden mt-10 pt-5 px-4 rounded-xl space-y-4">
           <Dropdown
             id="location-mobile"
@@ -120,7 +136,11 @@ const PropertySearchPage = ({
           <Dropdown
             id="price-mobile"
             label="Price"
-            options={["AED min - AED max", "AED min - AED max", "AED min - AED max"]}
+            options={[
+              "AED min - AED max",
+              "AED min - AED max",
+              "AED min - AED max",
+            ]}
             animation={animationProps(0.3)}
           />
           <Dropdown
@@ -138,8 +158,7 @@ const PropertySearchPage = ({
           <motion.button
             style={{ marginTop: "60px" }}
             className="w-full bg-[#9f3323] text-white px-4 py-4 rounded-full font-semibold uppercase text-sm"
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.3 }}
+            {...hoverProps}
             {...animationProps(0.5)}
           >
             Search
@@ -153,7 +172,10 @@ const PropertySearchPage = ({
         >
           {/* Location */}
           <div className="relative flex flex-col items-start gap-1 w-1/4 px-3 py-1">
-            <label htmlFor="location-desktop" className="text-lg text-black px-1">
+            <label
+              htmlFor="location-desktop"
+              className="text-lg text-black px-1"
+            >
               Location
             </label>
             <div className="relative w-full">
@@ -173,7 +195,12 @@ const PropertySearchPage = ({
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </div>
             </div>
@@ -181,7 +208,10 @@ const PropertySearchPage = ({
 
           {/* Property Type */}
           <div className="relative hidden md:flex flex-col items-start gap-1 w-1/4 px-3 py-1">
-            <label htmlFor="type-desktop" className="text-xs text-gray-500 px-1">
+            <label
+              htmlFor="type-desktop"
+              className="text-xs text-gray-500 px-1"
+            >
               Property Type
             </label>
             <div className="relative w-full">
@@ -201,20 +231,21 @@ const PropertySearchPage = ({
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </div>
             </div>
           </div>
 
           {/* Search Button */}
-          <motion.button
-            className="bg-[#9f3323] text-white px-4 py-4 w-auto md:w-1/4 h-full rounded-full font-playfair uppercase"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
+          <button className="bg-[#9f3323] text-white px-4 py-4 w-auto md:w-1/4 h-full rounded-full font-playfair uppercase">
             Search
-          </motion.button>
+          </button>
         </motion.div>
       </div>
     </div>

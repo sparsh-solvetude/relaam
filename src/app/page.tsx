@@ -109,20 +109,20 @@ import HomeClient from "@/common/elements/home";
 // app/page.tsx or app/home/page.tsx (Server Component – no 'use client')
 
 
-const fetchData = async () => {
-  return {
-    banner: [],
-    partners: [],
-    blogs: [],
-    faqs: [],
-    awards: [],
-    developments: [],
-    properties: [],
-    pageContent: null,
-  };
-};
+// const fetchData = async () => {
+//   return {
+//     banner: [],
+//     partners: [],
+//     blogs: [],
+//     faqs: [],
+//     awards: [],
+//     developments: [],
+//     properties: [],
+//     pageContent: null,
+//   };
+// };
 
 export default async function HomePage() {
-  const data = await fetchData();
-  return <HomeClient data={data} />;
+  // const data = await fetchData();
+  return <HomeClient  />;
 }
