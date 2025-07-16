@@ -76,7 +76,7 @@ export const FeaturedProperty = () => {
       <div className="max-w-screen-2xl mx-auto px-6 sm:px-12 pt-10 pb-20">
         <div className="text-black flex flex-col justify-center items-center text-center gap-2">
           <h2 className="text-5xl font-bold mb-6 leading-base">
-            Featured Property
+            Featured Properties
           </h2>
           <p className="font-light opacity-80 max-w-4xl">
             Discover our exclusive featured property that offers unparalleled

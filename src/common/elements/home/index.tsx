@@ -58,15 +58,15 @@ const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   return (
     <div>
       <Showcase />
-        <Element name="section1">
-  <section
-    data-name="section1"
-    ref={setRef('section1')}
-    className="h-auto md:h-screen"
-  >
-    <Search />
-  </section>
-</Element>
+      <Element name="section1">
+        <section
+          data-name="section1"
+          ref={setRef('section1')}
+          className="h-auto md:h-screen"
+        >
+          <Search />
+        </section>
+      </Element>
       <FeaturedProperty />
       <Services />
       <Expert />
