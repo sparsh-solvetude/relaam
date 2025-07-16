@@ -48,17 +48,17 @@ export const Form = ({}: any) => {
                             <input
                                 type="text"
                                 placeholder="Full Name"
-                                className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                                className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                                 name="name"
                             />
                             <input
                                 type="text"
                                 placeholder="Nationality"
-                                className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                                className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                                 name="nationality"
                             />
                             <select
-                                className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                                className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                                 name="inDubai"
                                 title="inDubai"
                             >
@@ -67,7 +67,7 @@ export const Form = ({}: any) => {
                                 <option>No</option>
                             </select>
                             <select
-                                className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                                className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                                 name="department"
                                 title="department"
                             >
@@ -88,13 +88,13 @@ export const Form = ({}: any) => {
                             <input
                                 type="text"
                                 placeholder="E-mail address"
-                                className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                                className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                                 name="email"
                             />
                             <input
                                 type="text"
                                 placeholder="Mobile Number"
-                                className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                                className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                                 name="mobile"
                             />
                             <div className="flex flex-col md:flex-row items-center justify-between gap-2 w-full bg-neutral-200 border border-neutral-300 px-4 py-2">
@@ -134,9 +134,9 @@ export const Form = ({}: any) => {
                             </div>
                             <button
                                 type="submit"
-                                className="flex font-light items-center justify-center gap-4 px-5 py-4 text-white bg-black border border-black mt-6 font-black w-full uppercase"
+                                className="bg-[#9f3517] rounded-lg flex font-bold text-lg items-center justify-center gap-4 px-5 py-2 text-white mt-3 font-black w-full"                        
                             >
-                                Submit
+                                Submit Application
                                 <img
                                 src="/icons/arrow-right-white.svg"
                                 alt="arrow"
@@ -152,17 +152,17 @@ export const Form = ({}: any) => {
                     <input
                         type="text"
                         placeholder="Full Name"
-                        className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                        className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                         name="name"
                     />
                     <input
                         type="text"
                         placeholder="Nationality"
-                        className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                        className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                         name="nationality"
                     />
                     <select
-                        className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                        className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                         name="inDubai"
                         title="inDubai"
                         required
@@ -172,7 +172,7 @@ export const Form = ({}: any) => {
                         <option>No</option>
                     </select>
                     <select
-                        className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                        className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                         name="department"
                         title="department"
                     >
@@ -193,23 +193,23 @@ export const Form = ({}: any) => {
                     <input
                         type="text"
                         placeholder="E-mail address"
-                        className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                        className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                         name="email"
                     />
                     <input
                         type="text"
                         placeholder="Mobile Number"
-                        className="w-full px-5 py-3 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black"
+                        className="w-full px-5 py-2 bg-[#F8F8F7] border border-neutral-300 mb-2 font-light opacity-80 placeholder:text-black rounded-lg"
                         name="mobile"
                     />
-                    <div className="flex items-center justify-between gap-0.5 w-full bg-neutral-200 border border-neutral-300 px-4 py-2 ">
+                    <div className="flex items-center justify-between gap-0.5 w-full bg-neutral-200 border border-neutral-300 px-4 py-2 rounded-lg">
                         <div className="flex items-center gap-2">
-                        <span className="text-sm text-theme-dark-green line-clamp-1 text-ellipsis font-light opacity-80">
-                            Upload your CV and/or cover letter*
-                        </span>
+                            <span className="text-sm text-theme-dark-green line-clamp-1 text-ellipsis font-light opacity-80">
+                                Upload your CV and/or cover letter*
+                            </span>
                         </div>
                         <label
-                        className="px-4 py-2 text-theme-dark-green bg-white text-sm font-bold border border-theme-dark-green text-nowrap font-light opacity-80"
+                        className="px-4 py-2 text-theme-dark-green bg-white text-sm font-bold border border-theme-dark-green text-nowrap font-light opacity-80 rounded-lg"
                         htmlFor="cv"
                         >
                         Choose File
@@ -239,9 +239,9 @@ export const Form = ({}: any) => {
                     </div>
                     <button
                         type="submit"
-                        className="flex font-light items-center justify-center gap-4 px-5 py-4 text-white bg-black border border-black mt-3 font-black w-full uppercase"
+                        className="bg-[#9f3517] rounded-lg flex font-bold text-lg items-center justify-center gap-4 px-5 py-2 text-white mt-3 font-black w-full "                        
                     >
-                        Submit
+                        Submit Application
                         <img
                         src="/icons/arrow-right-white.svg"
                         alt="arrow"
