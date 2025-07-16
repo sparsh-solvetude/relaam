@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import 'leaflet/dist/leaflet.css';
+import "leaflet/dist/leaflet.css";
 import { Navbar } from "@/common/elements/navbar";
 import { Footer } from "@/common/elements/footer";
 import { Cta } from "@/common/elements/cta";
 import CornerTab from "./cornerTab";
-
+import Loader from "./loader";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,7 +37,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-
+        <Loader />
         <Navbar properties={data.properties} areas={data.areas} />
         {children}
         {/* <CornerTab /> */}
