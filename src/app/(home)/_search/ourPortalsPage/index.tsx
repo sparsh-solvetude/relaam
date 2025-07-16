@@ -100,17 +100,17 @@ const OurPortalsPage = ({
         </motion.p>
 
         <motion.div
-          className="flex items-center justify-between gap-3 mt-4 rounded-full w-full flex-col md:flex-row"
+          className="flex items-center justify-between gap-3 mt-4 rounded-full w-full flex-col xl:flex-row"
           {...animationProps(0.6)}
         >
           <motion.button
-            className="bg-[#9f3323] text-white px-4 py-3 w-full md:w-1/2 h-full rounded-lg font-bold uppercase"
+            className="bg-[#9f3323] text-white px-4 py-3 w-full h-full rounded-lg font-bold uppercase"
             {...hoverProps}
           >
             Tenant Portal
           </motion.button>
           <motion.button
-            className="bg-white border border-[#9f3323] text-[#9f3323] px-4 py-3 w-full md:w-1/2 h-full rounded-lg font-bold uppercase"
+            className="bg-white border border-[#9f3323] text-[#9f3323] px-4 py-3 w-full  h-full rounded-lg font-bold uppercase"
             {...hoverProps}
           >
             Landlord Portal

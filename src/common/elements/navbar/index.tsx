@@ -28,7 +28,7 @@ export const Navbar = ({ properties = [], areas = [] }) => {
   };
 
   const [scrolled, setScrolled] = useState(false);
-  
+
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
 
@@ -52,11 +52,18 @@ export const Navbar = ({ properties = [], areas = [] }) => {
     };
   }, []);
 
+
+
   const dropdownMenus = [
     {
       key: "about",
       label: "About Us",
-      items: ["Relaam Legacy", "Recognition", "Leadership", "Newsroom"],
+      items: [
+        { label: "Relaam Legacy", href: "/" },
+        { label: "Recognition", href: "/" },
+        { label: "Leadership", href: "/" },
+        { label: "Newsroom", href: "/" },
+      ],
       description:
         "Learn more about our company values, team, and achievements.",
     },
@@ -64,38 +71,45 @@ export const Navbar = ({ properties = [], areas = [] }) => {
       key: "rent",
       label: "Rent",
       items: [
-        "All Properties",
-        "Apartments",
-        "Villas",
-        "Townhouses",
-        "Offices",
-        "Retail",
-        "Warehouse",
+        { label: "All Properties", href: "/" },
+        { label: "Apartments", href: "/" },
+        { label: "Villas", href: "/rent/villas" },
+        { label: "Townhouses", href: "/" },
+        { label: "Offices", href: "/" },
+        { label: "Retail", href: "/" },
+        { label: "Warehouse", href: "/" },
       ],
       description:
         "Explore a variety of rental options tailored to your needs.",
     },
     {
-      key: "property",
+      key: "property-management",
       label: "Property Management",
-      items: ["Landlord Services", "Leasing Services"],
+      items: [
+        { label: "Landlord Services", href: "/property-management/landlord-services" },
+        { label: "Leasing Services", href: "/property-management/leasing-services" },
+      ],
       description:
         "Comprehensive solutions for managing your real estate assets.",
     },
     {
       key: "facilities",
       label: "Facilities Management",
-      items: ["Landlords Services", "Tenants Services", "Contractors Services"],
+      items: [
+        { label: "Landlords Services", href: "/" },
+        { label: "Tenants Services", href: "/" },
+        { label: "Contractors Services", href: "/" },
+      ],
       description: "Reliable and efficient facility support and maintenance.",
     },
     {
       key: "explore",
       label: "Explore",
       items: [
-        "Communities",
-        "Property Blogs",
-        "Market Report",
-        "Signature Projects",
+        { label: "Communities", href: "/" },
+        { label: "Property Blogs", href: "/" },
+        { label: "Market Report", href: "/" },
+        { label: "Signature Projects", href: "/" },
       ],
       description:
         "Insights, guides, and resources for property seekers and owners.",
@@ -103,7 +117,11 @@ export const Navbar = ({ properties = [], areas = [] }) => {
     {
       key: "contact",
       label: "Contact",
-      items: ["Inquire via Lead Form", "Call", "WhatsApp"],
+      items: [
+        { label: "Inquire via Lead Form", href: "/" },
+        { label: "Call", href: "/" },
+        { label: "WhatsApp", href: "/" },
+      ],
       description:
         "Get in touch with us for inquiries, support, or collaboration.",
     },
@@ -193,13 +211,14 @@ export const Navbar = ({ properties = [], areas = [] }) => {
                     : "grid-cols-2"
                 }`}
               >
+
                 {currentDropdown.items.map((item, index) => (
-                  <div key={index} className="group hover:scale-[1.02] ">
+                  <div key={index} className="group hover:scale-[1.02]">
                     <Link
-                      href="#"
+                      href={item.href}
                       className="block text-[#435254] text-lg px-2 border-b border-[#101820] group-hover:border-[#9f3517] transition-all duration-300 ease-in-out"
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   </div>
                 ))}

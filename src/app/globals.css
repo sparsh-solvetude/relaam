@@ -34,3 +34,16 @@ body {
 button {
   font-family: 'SomeFont', sans-serif;
 }
+
+
+
+
+.heading {
+color: #1e2a45;
+}
+
+.title {
+  color: #595d6a;
+  font-weight: 300;
+  opacity: 0.8;
+}
