@@ -105,13 +105,13 @@ export const Form = ({}: any) => {
                                 </div>
                                 <label
                                 className="px-4 py-2 bg-white border border-neutral-300 text-sm text-nowrap font-light opacity-80 rounded-lg"
-                                htmlFor="cv"
+                                htmlFor="cv2"
                                 >
                                     Choose File
                                 </label>
                                 <input
                                 type="file"
-                                id="cv"
+                                id="cv2"
                                 className="hidden"
                                 accept=".pdf,.doc,.docx"
                                 name="cv"
