@@ -90,7 +90,7 @@ export const FeaturedProperty = () => {
           <Item
             image="/images/burj-khalifa-view.jpg"
             slug="property-1"
-            name="Luxury Villa in Dubai"
+            name="Luxury Villa in Dubai" 
             location="Dubai, UAE"
             price="AED 50,000"
             icon={houseIcon}
