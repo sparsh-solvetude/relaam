@@ -19,13 +19,13 @@ export const Showcase = ({ slides = [], title, description }: any) => {
 
 
   return (
-    <div className="h-[400px] md:h-screen w-full">
+    <div className="h-[400px] md:h-screen w-full relative">
       <img
         src="/images/career-hero.jpg"
         alt="banner"
         className="h-[400px] md:h-screen w-full object-cover"
       />
-      <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-40"></div>
+      <div className="absolute inset-0 w-full h-full bg-black/40"></div>
       <div className="absolute top-0 left-0 w-full h-[400px] md:h-screen">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-12 flex flex-col items-center justify-center h-[400px] md:h-screen pt-20 text-white text-center">
           <p className="text-xl w-full lg:w-2/5 leading-tight mb-3">
