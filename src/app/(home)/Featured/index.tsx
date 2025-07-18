@@ -38,7 +38,7 @@ const Featured = () => {
   ];
   return (
     <div className="py-16 px-4 md:px-12 lg:px-32">
-      <div className="text-black flex flex-col justify-center items-center text-center gap-2">
+      <div className="text-black flex flex-col justify-center items-center text-center gap-2 opacity-70">
         <p className="text-sm tracking-widest text-[#9f3323] font-semibold uppercase mb-3">
           TESTIMONIALS
         </p>
@@ -47,10 +47,10 @@ const Featured = () => {
         </h1>
       </div>
 
-      <div className=" flex flex-wrap gap-2 mt-10">
+      <div className=" flex flex-wrap justify-center gap-[1%] mt-10">
         {properties.map((property) => (
           <div key={property.id}>
-            <div className="bg-white px-4 py-8  w-[340px]  flex flex-col items-center gap-1 mr-3 h-[24rem] overflow-hidden relative cursor-pointer border-2 border-transparent">
+            <div className="bg-white px-4 py-8  w-[300px]  flex flex-col items-center gap-1 mr-3 h-[24rem] overflow-hidden relative cursor-pointer border-2 border-transparent">
               <img
                 src={property.image}
                 alt={property.name}
@@ -62,7 +62,7 @@ const Featured = () => {
               </div>
             </div>
 
-            <div>
+            <div className="opacity-80">
               <p className="text-[#9f3323] mt-2">JOH SMITH ARNOLD</p>
               {property.name} <br />
               {property.price}

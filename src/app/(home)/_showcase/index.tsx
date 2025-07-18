@@ -368,24 +368,24 @@ export const Showcase = () => {
         animate={{ opacity: 0.7 }}
         transition={{ duration: 0.5, ease: easeInOut }}
       ></motion.div>
-
       <div className="absolute top-0 left-0 w-full h-svh">
         <div
           ref={contentRef}
-          className="max-w-screen-2xl mx-auto px-6 sm:px-12 flex flex-col items-center justify-around h-svh pt-20 text-white"
+          className="max-w-screen-2xl mx-auto px-3 sm:px-12 flex flex-col items-center justify-around h-svh pt-20 text-white"
         >
           <div className="flex flex-col items-center">
             <motion.h1
-              className="text-5xl sm:text-6xl md:text-4xl font-bold text-white md:leading-base"
+              className="text-5xl sm:text-6xl md:text-2xl font-medium text-white md:leading-base text-center space-x-2"
               initial={false}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.5, ease: easeInOut }}
             >
-              Smart Property Investments
+              {/* Smart Property Investments */}
+              POWERED BY LEGACY<br/>DRIVEN BY THE FUTURE
             </motion.h1>
 
-            <motion.p
-              className="text-lg mt-8 w-full lg:w-3/5 leading-tight text-center"
+            {/* <motion.p
+              className="text-lg mt-8 w-full lg:w-3/5 font-light leading-tight text-center"
               initial={false}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: 0.1, duration: 0.5, ease: easeInOut }}
@@ -393,8 +393,16 @@ export const Showcase = () => {
               Discover lucrative opportunities in property investment. Maximize
               returns with carefully selected, high-potential properties. Start
               investing today!
+            </motion.p> */}
+            
+            <motion.p
+              className="text-md mt-8 w-full font-light leading-tight text-center"
+              initial={false}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ delay: 0.1, duration: 0.5, ease: easeInOut }}
+            >
+              ADCP IS NOW RELAAM
             </motion.p>
-
             <motion.button
               className="bg-[#a89b94] text-white px-8 w-60  py-2 mt-8 text-[14px]"
               initial={false}
@@ -407,51 +415,65 @@ export const Showcase = () => {
             </motion.button>
           </div>
 
-          <div className="flex gap-4 w-full justify-center">
-            <div>
-              <label className="block text-[10px] font-medium">
-                PROPERTY SEARCH
-              </label>
-              <div className="flex space-x-2 border border-white p-2">
-                <div className="border-r border-white">
-                <select className="p-2 bg-gray-700 text-white bg-transparent mr-1 text-[10px]">
-                  {locations.map((loc, index) => (
-                    <option key={index} value={loc} style={{ color: "black" }} className="text-[10px]">
-                      {loc}
-                    </option>
-                  ))}
-                </select>
-                </div>
+          <div className="flex w-full justify-center opacity-90">
+            <div className="   gap-1 md:gap-4   flex flex-col md:flex-row w-3/4 justify-center">
+              <div className="w-full">
+                <label className="block text-[10px] font-medium">
+                  PROPERTY SEARCH
+                </label>
+                <div className="flex space-x-2 border border-white p-2">
+                  <div className="border-r border-white w-1/2">
+                    <select className="p-2 bg-gray-700 text-white bg-transparent mr-1 text-[10px] ">
+                      {locations.map((loc, index) => (
+                        <option
+                          key={index}
+                          value={loc}
+                          style={{ color: "black" }}
+                          className="text-[10px]"
+                        >
+                          {loc}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
-             <div className="border-r border-white">
-                 <select className="p-2 bg-gray-700 text-white bg-transparent mr-1 text-[10px]">
-                  {propertyTypes.map((type, index) => (
-                    <option key={index} value={type} style={{ color: "black" }} className="text-[10px]">
-                      {type}
-                    </option>
-                  ))}
-                </select>
-             </div>
-                <button className="p-2 bg-white text-amber-950 text-[10px]">
-                  SEARCH PROPERTIES
-                </button>
+                  <div className="border-r border-white w-1/2">
+                    <select className="p-2 bg-gray-700 text-white bg-transparent mr-1 text-[10px] ">
+                      {propertyTypes.map((type, index) => (
+                        <option
+                          key={index}
+                          value={type}
+                          style={{ color: "black" }}
+                          className="text-[10px]"
+                        >
+                          {type}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <button className="p-2 bg-white text-amber-950 text-[10px] w-1/2">
+                    SEARCH PROPERTIES
+                  </button>
+                </div>
               </div>
-            </div>
-            <div>
-              <label className="block text-[10px] font-medium">OUR PORTALS</label>
-              <div className="flex space-x-2 border border-white p-2 text-[10px]">
-                <button className="p-2 bg-white text-amber-950">
-                  TENANT PORTAL
-                </button>
-                <button className="p-2 bg-white text-amber-950 text-[10px]">
-                  LANDLORD PORTAL
-                </button>
+              <div className="w-full">
+                <label className="block text-[10px] font-medium ">
+                  OUR PORTALS
+                </label>
+                <div className="flex space-x-2 border border-white p-2 text-[10px] w-full">
+                  <button className="p-2 bg-white text-amber-950 w-1/2">
+                    TENANT PORTAL
+                  </button>
+                  <button className="p-2 bg-white text-amber-950 text-[10px] w-1/2">
+                    LANDLORD PORTAL
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
+      {/* 
       <motion.div
         className="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2"
         initial={{ opacity: 0, y: 50 }}
@@ -467,8 +489,49 @@ export const Showcase = () => {
             onClick={() => currentSlideSet(index)}
           ></div>
         ))}
-      </motion.div>
+      </motion.div> */}
 
+      <div className="absolute bottom-6 md:bottom-5  px-6 flex items-center justify-end w-full pointer-events-none ">
+        {/* Progress Line */}
+        <div className="w-[90%] flex gap-10 items-center px-20">
+          <div className="flex-grow h-[2px] bg-white/30 relative mx-4 pointer-events-auto">
+            <div className="absolute top-0 left-0 h-full w-full flex">
+              {slides.map((_, index) => (
+                <div
+                  key={index}
+                  className={`flex-1 h-full mx-[1px] ${
+                    currentSlide === index ? "bg-white" : "bg-transparent"
+                  }`}
+                  onClick={() => currentSlideSet(index)}
+                  style={{ cursor: "pointer" }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Arrow Buttons */}
+          <div className="flex space-x-6 pointer-events-auto">
+            <button
+              onClick={() =>
+                currentSlideSet(
+                  (currentSlide - 1 + slides.length) % slides.length
+                )
+              }
+              className="text-white text-xl hover:text-gray-300 transition"
+            >
+              ←
+            </button>
+            <button
+              onClick={() =>
+                currentSlideSet((currentSlide + 1) % slides.length)
+              }
+              className="text-white text-xl hover:text-gray-300 transition"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </div>
       {show && <Booking showSet={showSet} />}
     </div>
   );

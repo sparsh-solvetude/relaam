@@ -32,7 +32,7 @@ const faqData = [
 export const FAQ = () => {
   return (
     <div className="flex flex-col w-full items-center my-10 bg-[#f9f4f1] py-16">
-      <div className="mb-12 w-3/5 ">
+      <div className="mb-12 w-3/5 opacity-70">
         <p className="text-sm tracking-widest text-[#9f3323] font-semibold text-center uppercase mb-3">
           Frequently Asked Questions
         </p>

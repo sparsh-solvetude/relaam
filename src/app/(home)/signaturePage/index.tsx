@@ -4,7 +4,7 @@ import React from "react";
 const SignaturePage = () => {
   return (
     <div className="py-16 px-4 md:px-12 lg:px-32">
-      <div className="mb-12 text-center">
+      <div className="mb-12 text-center opacity-80">
         <p className="text-sm tracking-widest text-[#9f3323] font-semibold uppercase mb-3">
          Signature Projects
         </p>
