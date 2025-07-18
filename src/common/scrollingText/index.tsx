@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 import clsx from "clsx";
 
 const ScrollingText = () => {
-  const textItems = Array(4).fill("IS RELAAM");
+  const textItems = Array(4).fill(null); 
 
   const headingClass = clsx(
     "text-white font-normal z-10 mix-blend-difference overflow-hidden",
@@ -11,7 +11,7 @@ const ScrollingText = () => {
   );
 
   const headingStyle = {
-    fontSize: "15rem",
+    fontSize: "12rem",
     fontWeight: 200,
     lineHeight: 1,
   };
@@ -19,10 +19,10 @@ const ScrollingText = () => {
   return (
     <div className="w-full overflow-hidden">
       <Marquee speed={50} direction="right" className="text-white gap-10">
-        <div className="flex px-10 items-center gap-20">
-          {textItems.map((text, index) => (
+        <div className="flex px-10 items-center gap-20 opacity-70">
+          {textItems.map((_, index) => (
             <h1 key={index} className={headingClass} style={headingStyle}>
-              {text}
+              <span className="italic">ADCP</span> IS <span className="italic">RELAAM</span> |
             </h1>
           ))}
         </div>

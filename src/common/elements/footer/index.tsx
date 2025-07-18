@@ -138,7 +138,7 @@ export const Footer = ({ properties = [] }) => {
         </div>
         <div className="w-full md:w-1/4">
           <div className="flex flex-col gap-4 h-full justify-end">
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <img
                 src="/icons/social/facebook.svg"
                 alt="facebook"
@@ -149,7 +149,7 @@ export const Footer = ({ properties = [] }) => {
                 alt="instagram"
                 className="h-10 w-10 p-1.5 rounded-full"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
