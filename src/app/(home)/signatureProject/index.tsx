@@ -3,9 +3,9 @@ import PropertyCarousel from "../propertyCarousel";
 // components/data/slides.ts
 
 export const slides = [
+  { image: "/images/burj-al-arab.jpg", label: "COMMUNITY MANAGEMENT" },
   { image: "/images/burj-khalifa-view.jpg", label: "OWNER'S ASSOCIATION" },
   { image: "/images/atlantis.jpg", label: "LEASING SERVICES" },
-  { image: "/images/burj-al-arab.jpg", label: "COMMUNITY MANAGEMENT" },
   { image: "/images/burj-khalifa-view.jpg", label: "OWNER'S ASSOCIATION" },
   { image: "/images/atlantis.jpg", label: "LEASING SERVICES" },
   { image: "/images/atlantis.jpg", label: "LEASING SERVICES" },

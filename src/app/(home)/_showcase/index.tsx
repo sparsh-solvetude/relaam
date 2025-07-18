@@ -381,7 +381,9 @@ export const Showcase = () => {
               transition={{ duration: 0.5, ease: easeInOut }}
             >
               {/* Smart Property Investments */}
-              POWERED BY LEGACY<br/>DRIVEN BY THE FUTURE
+              POWERED BY LEGACY
+              <br />
+              DRIVEN BY THE FUTURE
             </motion.h1>
 
             {/* <motion.p
@@ -394,7 +396,7 @@ export const Showcase = () => {
               returns with carefully selected, high-potential properties. Start
               investing today!
             </motion.p> */}
-            
+
             <motion.p
               className="text-md mt-8 w-full font-light leading-tight text-center"
               initial={false}
@@ -415,15 +417,15 @@ export const Showcase = () => {
             </motion.button>
           </div>
 
-          <div className="flex w-full justify-center opacity-90">
-            <div className="   gap-1 md:gap-4   flex flex-col md:flex-row w-3/4 justify-center">
+          <div className="hidden sm:flex w-full justify-center opacity-90">
+            <div className="gap-1 md:gap-4 flex flex-col md:flex-row w-3/4 justify-center">
               <div className="w-full">
                 <label className="block text-[10px] font-medium">
                   PROPERTY SEARCH
                 </label>
                 <div className="flex space-x-2 border border-white p-2">
                   <div className="border-r border-white w-1/2">
-                    <select className="p-2 bg-gray-700 text-white bg-transparent mr-1 text-[10px] ">
+                    <select className="p-2 bg-gray-700 text-white bg-transparent mr-1 text-[10px]">
                       {locations.map((loc, index) => (
                         <option
                           key={index}
@@ -438,7 +440,7 @@ export const Showcase = () => {
                   </div>
 
                   <div className="border-r border-white w-1/2">
-                    <select className="p-2 bg-gray-700 text-white bg-transparent mr-1 text-[10px] ">
+                    <select className="p-2 bg-gray-700 text-white bg-transparent mr-1 text-[10px]">
                       {propertyTypes.map((type, index) => (
                         <option
                           key={index}
@@ -456,8 +458,9 @@ export const Showcase = () => {
                   </button>
                 </div>
               </div>
+
               <div className="w-full">
-                <label className="block text-[10px] font-medium ">
+                <label className="block text-[10px] font-medium">
                   OUR PORTALS
                 </label>
                 <div className="flex space-x-2 border border-white p-2 text-[10px] w-full">
@@ -491,9 +494,9 @@ export const Showcase = () => {
         ))}
       </motion.div> */}
 
-      <div className="absolute bottom-6 md:bottom-5  px-6 flex items-center justify-end w-full pointer-events-none ">
+      <div className="absolute bottom-6 md:bottom-5  px-6 flex items-center justify-center md:justify-end w-full pointer-events-none">
         {/* Progress Line */}
-        <div className="w-[90%] flex gap-10 items-center px-20">
+        <div className="w-[90%] flex gap-10 items-center px-0 md:px-20">
           <div className="flex-grow h-[2px] bg-white/30 relative mx-4 pointer-events-auto">
             <div className="absolute top-0 left-0 h-full w-full flex">
               {slides.map((_, index) => (

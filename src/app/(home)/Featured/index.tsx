@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
+import { useRef, useState, useEffect } from "react";
 
 const Featured = () => {
   const properties = [
@@ -6,7 +9,7 @@ const Featured = () => {
       id: 1,
       image: "/images/brand_1.png",
       review:
-        "Great experience and service Everyone was attentive and available .",
+        "Great experience and service Everyone was attentive and available.",
       name: "Luxury Villa in Dubai",
       location: "Dubai, UAE",
       price: "AED 50,000",
@@ -17,7 +20,7 @@ const Featured = () => {
       id: 2,
       image: "/images/brand_1.png",
       review:
-        "Great experience and service Everyone was attentive and available .",
+        "Great experience and service Everyone was attentive and available.",
       name: "Modern Apartment in Marina",
       location: "Dubai Marina, UAE",
       price: "AED 35,000",
@@ -28,16 +31,86 @@ const Featured = () => {
       id: 3,
       image: "/images/brand_1.png",
       review:
-        "Great experience and service Everyone was attentive and available .",
+        "Great experience and service Everyone was attentive and available.",
       name: "Elegant Villa in Abu Dhabi",
       location: "Abu Dhabi, UAE",
       price: "AED 42,000",
       bedrooms: "3 BEDROOM",
       apartment: "Apartment",
     },
+    {
+      id: 4,
+      image: "/images/brand_1.png",
+      review:
+        "Great experience and service Everyone was attentive and available.",
+      name: "Sea View Penthouse",
+      location: "Palm Jumeirah, UAE",
+      price: "AED 70,000",
+      bedrooms: "4 BEDROOM",
+      apartment: "Penthouse",
+    },
+    {
+      id: 5,
+      image: "/images/brand_1.png",
+      review:
+        "Great experience and service Everyone was attentive and available.",
+      name: "Cozy Home in Downtown",
+      location: "Downtown Dubai, UAE",
+      price: "AED 30,000",
+      bedrooms: "2 BEDROOM",
+      apartment: "Apartment",
+    },
   ];
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const cardWidth = 360;
+  const gap = 16;
+  const imageWidth = cardWidth + gap;
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft } = scrollRef.current;
+      const newScrollLeft =
+        direction === "left"
+          ? scrollLeft - imageWidth
+          : scrollLeft + imageWidth;
+
+      scrollRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const scrollLeft = scrollRef.current.scrollLeft;
+      const index = Math.round(scrollLeft / imageWidth);
+      setCurrentSlide(index);
+    }
+  };
+
+  const jumpToSlide = (index: number) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: index * imageWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    const ref = scrollRef.current;
+    if (ref) {
+      ref.addEventListener("scroll", handleScroll);
+      return () => ref.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
   return (
-    <div className="py-16 px-4 md:px-12 lg:px-32">
+    <section className="text-center pt-6 md:pt-12">
       <div className="text-black flex flex-col justify-center items-center text-center gap-2 opacity-70">
         <p className="text-sm tracking-widest text-[#9f3323] font-semibold uppercase mb-3">
           TESTIMONIALS
@@ -47,110 +120,85 @@ const Featured = () => {
         </h1>
       </div>
 
-      <div className=" flex flex-wrap justify-center gap-[1%] mt-10">
-        {properties.map((property) => (
-          <div key={property.id}>
-            <div className="bg-white px-4 py-8  w-[300px]  flex flex-col items-center gap-1 mr-3 h-[24rem] overflow-hidden relative cursor-pointer border-2 border-transparent">
-              <img
-                src={property.image}
-                alt={property.name}
-                className="w-full h-full absolute left-0 top-0 object-cover "
-              />
+      <div className="relative w-full flex justify-center">
+        <div className="w-[1152px] px-5 overflow-hidden">
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar"
+          >
+            {properties.map((property, index) => (
+              <div key={index}>
+                <div className="bg-white px-3 py-8 w-[360px] flex flex-col items-center gap-1 h-[24rem] overflow-hidden relative cursor-pointer border-2 border-transparent">
+                  <img
+                    src={property.image}
+                    alt={property.name}
+                    className="w-full h-full absolute left-0 top-0 object-cover"
+                  />
+                  <div className="absolute top-0 w-[90%] md:w-full md:right-0 right-8 pt-2">
+                    <p className="text-sm text-left px-3">{property.review}</p>
+                  </div>
+                </div>
 
-              <div className="absolute top-0 p-4">
-                <p>{property.review}</p>
+                <div className="opacity-80 text-left mt-2">
+                  <p className="text-[#9f3323]">JOH SMITH ARNOLD</p>
+                  {property.name} <br />
+                  {property.price}
+                  <p className="text-sm">
+                    {property.location} {property.bedrooms} {property.apartment}
+                  </p>
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-            <div className="opacity-80">
-              <p className="text-[#9f3323] mt-2">JOH SMITH ARNOLD</p>
-              {property.name} <br />
-              {property.price}
-              <p className="text-sm">
-                {property.location} {property.bedrooms} {property.apartment}
-              </p>
+      {/* Progress Bar & Arrows */}
+      <div className="w-full py-8 md:py-16  flex items-center justify-center">
+        <div className="w-[90%] max-w-[1152px] flex gap-10 items-center px-4">
+          <div className="flex-grow h-[2px] bg-black/20 relative mx-4">
+            <div className="absolute top-0 left-0 h-full w-full flex">
+              {properties.map((_, index) => (
+                <div
+                  key={index}
+                  className={`flex-1 h-full mx-[1px] transition-colors duration-300 ${
+                    currentSlide === index ? "bg-black" : "bg-transparent"
+                  }`}
+                  onClick={() => jumpToSlide(index)}
+                  style={{ cursor: "pointer" }}
+                />
+              ))}
             </div>
           </div>
-        ))}
+
+          <div className="flex space-x-3">
+            <button
+              onClick={() => scroll("left")}
+              className="text-black text-xl hover:scale-110 transition"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="text-black text-xl hover:scale-110 transition"
+            >
+              →
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* Hide scrollbar */}
+      <style jsx>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          scrollbar-width: none;
+        }
+      `}</style>
+    </section>
   );
 };
 
 export default Featured;
-
-// import React from "react";
-
-// const Featured = () => {
-//   const properties = [
-//     {
-//       id: 1,
-//       image: "/images/atlantis.jpg",
-//       review:
-//         "Great experience and service Everyone was attentive and available .",
-//       name: "JOHN SMITH ARNOLD",
-//       title: "3 BEDROOM APARTMENT",
-//       location: "AL REEM ISLAND",
-//     },
-//     {
-//       id: 2,
-//       image: "/images/atlantis.jpg",
-//         review:
-//         "Great experience and service Everyone was attentive and available .",
-//       name: "SARAH MILLER",
-//       title: "2 BEDROOM LOFT",
-//       location: "DOWNTOWN DUBAI",
-//     },
-//     {
-//       id: 3,
-//       image: "/images/atlantis.jpg",
-//         review:
-//         "Great experience and service Everyone was attentive and available .",
-//       name: "DAVID CLARK",
-//       title: "4 BEDROOM VILLA",
-//       location: "PALM JUMEIRAH",
-//     },
-//   ];
-//   return (
-//     <div className="py-16 px-4 md:px-12 lg:px-32">
-//       <div className="text-black flex flex-col justify-center items-center text-center gap-2">
-//         <h2 className="text-5xl font-bold mb-6 leading-base">
-//           Featured Properties
-//         </h2>
-//         <p className="font-light opacity-80 max-w-4xl">
-//           Discover our exclusive featured property that offers unparalleled
-//           luxury and comfort. This stunning residence is designed to meet the
-//           highest standards of modern living, providing a perfect blend of
-//           elegance and functionality.
-//         </p>
-//       </div>
-
-//       <div className=" flex flex-wrap gap-2 mt-10">
-//         {properties.map((property) => (
-//           <div key={property.id}>
-//             <div className="bg-white px-4 py-8  w-[340px]  flex flex-col items-center gap-1 mr-3 h-[24rem] overflow-hidden relative cursor-pointer border-2 border-transparent">
-//               <img
-//                 src={property.image}
-//                 alt={property.title}
-//                 className="w-full h-full absolute left-0 top-0 object-cover "
-//               />
-
-//               <div className="absolute top-0 p-4">
-//                 <p>{property.review}</p>
-//               </div>
-//             </div>
-
-//             <div>
-//               <p className="text-[#9f3323]">JOH SMITH ARNOLD</p>
-//               {property.name} <br />
-//               {property.title} <br />
-//               {property.location}
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Featured;

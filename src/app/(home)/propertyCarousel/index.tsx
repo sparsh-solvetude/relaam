@@ -28,7 +28,7 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const imageWidth = 450 + 16; // width + gap
+  const imageWidth = 450 + 16;
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -45,7 +45,6 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
     }
   };
 
-  // Update currentSlide on scroll
   const handleScroll = () => {
     if (scrollRef.current) {
       const scrollLeft = scrollRef.current.scrollLeft;
@@ -54,7 +53,6 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
     }
   };
 
-  // Jump to specific slide from progress bar
   const jumpToSlide = (index: number) => {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
@@ -74,9 +72,8 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
 
   return (
     <section className="bg-[#f9f4f1] text-center pt-12">
-      {/* Heading */}
-      <div className="flex justify-center opacity-80">
-        <div className="mb-12 w-3/5">
+      <div className="flex justify-center opacity-80 px-4">
+        <div className="mb-12 w-full md:w-3/5">
           <p className="text-sm tracking-widest text-[#9f3323] font-semibold uppercase mb-3">
             {content.title}
           </p>
@@ -90,15 +87,13 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
         </div>
       </div>
 
-      {/* Carousel Section */}
-      <div className="relative w-full">
-        {/* Scrollable Image Row */}
+      <div className="relative w-full px-4">
         <div
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar px-4"
+          className="flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar "
         >
           {slides.map((slide, index) => (
-            <div key={index} className="flex-shrink-0 w-[450px] cursor-pointer">
+            <div key={index} className="flex-shrink-0 w-full md:w-[450px] cursor-pointer">
               <div className="bg-white pb-2">
                 <div className="h-[300px] w-full relative overflow-hidden shadow-md hover:shadow-lg transition">
                   <Image
@@ -123,10 +118,8 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
           ))}
         </div>
 
-        {/* Progress Bar & Arrows */}
-        <div className="w-full py-16 flex items-center justify-end">
-          <div className="w-[90%] flex gap-10 items-center px-20">
-            {/* Progress Line */}
+        <div className="w-full py-8 md:py-16 flex items-center justify-center md:justify-end">
+          <div className="w-[90%] flex gap-10 items-center px-0 md:px-20">
             <div className="flex-grow h-[2px] bg-black/20 relative mx-4">
               <div className="absolute top-0 left-0 h-full w-full flex">
                 {slides.map((_, index) => (
@@ -142,8 +135,7 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
               </div>
             </div>
 
-            {/* Arrows */}
-            <div className="flex space-x-3">
+            <div className="flex gap-5 md:gap-10">
               <button
                 onClick={() => scroll("left")}
                 className="text-black text-xl hover:scale-110 transition"
@@ -161,7 +153,6 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
         </div>
       </div>
 
-      {/* Hide scrollbar */}
       <style jsx>{`
         .hide-scrollbar::-webkit-scrollbar {
           display: none;

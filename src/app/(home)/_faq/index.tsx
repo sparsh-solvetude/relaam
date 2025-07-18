@@ -31,8 +31,8 @@ const faqData = [
 
 export const FAQ = () => {
   return (
-    <div className="flex flex-col w-full items-center my-10 bg-[#f9f4f1] py-16">
-      <div className="mb-12 w-3/5 opacity-70">
+    <div className="flex flex-col w-full items-center bg-[#f9f4f1] py-8 md:py-16  px-4">
+      <div className="mb-12 w-full md:w-3/5 opacity-70">
         <p className="text-sm tracking-widest text-[#9f3323] font-semibold text-center uppercase mb-3">
           Frequently Asked Questions
         </p>
@@ -43,7 +43,7 @@ export const FAQ = () => {
           FIND QUICK ANSWERS TO YOUR MOST COMMON QUESTIONS.
         </p>
       </div>
-      <div className="flex flex-col gap-3 w-2/4 max-h-96 overflow-auto">
+      <div className="flex flex-col gap-3 w-full px-4 md:w-2/4 max-h-96 overflow-auto">
         {faqData.map((item, index) => (
           <Item key={index} question={item.question} answer={item.answer} />
         ))}

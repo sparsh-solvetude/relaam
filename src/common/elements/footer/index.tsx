@@ -138,18 +138,18 @@ export const Footer = ({ properties = [] }) => {
         </div>
         <div className="w-full md:w-1/4">
           <div className="flex flex-col gap-4 h-full justify-end">
-            {/* <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
               <img
-                src="/icons/social/facebook.svg"
+                src="images/facebook.png"
                 alt="facebook"
-                className="h-10 w-10  p-1.5 rounded-full"
+                className="h-14 w-14   invert"
               />
               <img
-                src="/icons/social/instagram.svg"
+                src="images/instagram.png"
                 alt="instagram"
-                className="h-10 w-10 p-1.5 rounded-full"
+                className="h-11 w-11 invert"
               />
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

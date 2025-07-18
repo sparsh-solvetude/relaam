@@ -4,11 +4,11 @@ import PropertyCarousel from "../propertyCarousel";
 
 
 export const slides = [
+  { image: "/images/burj-al-arab.jpg", label: "AL RAHAH" },
   { image: "/images/burj-khalifa-view.jpg", label: "KHALIFA CITY" },
   { image: "/images/atlantis.jpg", label: "MBZ CITY" },
-  { image: "/images/burj-al-arab.jpg", label: "AL RAHAH" },
   { image: "/images/burj-khalifa-view.jpg", label: "BANO YAS CITY" },
-  // { image: "/images/atlantis.jpg", label: "LEASING SERVICES" },
+    // { image: "/images/atlantis.jpg", label: "LEASING SERVICES" },
   // { image: "/images/atlantis.jpg", label: "LEASING SERVICES" },
   // { image: "/images/atlantis.jpg", label: "LEASING SERVICES" },
 ];
